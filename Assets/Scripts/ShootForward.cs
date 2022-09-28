@@ -24,7 +24,7 @@ public class ShootForward : MonoBehaviour
     }
     private void Shoot()
     {
-        Rigidbody newBullet = Instantiate(bullet, transform.position, bullet.rotation) as Rigidbody;
+        Rigidbody newBullet = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
         newBullet.AddForce(transform.forward * velocity, ForceMode.VelocityChange);
     }
 }
