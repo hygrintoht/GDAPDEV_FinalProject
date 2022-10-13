@@ -15,10 +15,9 @@ public class ShipControls : MonoBehaviour
     //turret parameters
     [SerializeField] Turret[] turrets;
     [SerializeField] public float fireRate = 1.0f;
-
-    enum BulletType {red, green, blue}
+    [SerializeField] Turret.BulletType currBulletType = Turret.BulletType.red;
+    
     float fireCountdown = 0;
-    BulletType bulletType = BulletType.red;
     bool isFireing = false;
 
 
@@ -47,21 +46,31 @@ public class ShipControls : MonoBehaviour
         
     }
 
-    void ShootTurrets()
+    void ShootTurrets()//loops through turrets that needs to shoot a bullet type
     {
         foreach (Turret turret in turrets)
         {
-            turret.Shoot();
+            turret.Shoot(currBulletType);
         }
     }
 
-    public void Fire(bool pressed)
+    public void Fire(bool pressed)//changes the ship state if firing
     {
         isFireing = pressed;
     }
 
-    public void ChangeBulletType(bool change)//0 backward 1 forward
+    public void ChangeBulletType(bool change)//shifts to another bullet type (0 backward 1 forward)
     {
-        
+        int numChange;
+        if (change) numChange = (int)currBulletType + 1;
+        else numChange = (int)currBulletType - 1;
+
+        if (numChange == -1) numChange = 2;
+        if (numChange == 3) numChange = 0;
+
+        if (numChange == 0) currBulletType = Turret.BulletType.red;
+        if (numChange == 1) currBulletType = Turret.BulletType.green;
+        if (numChange == 2) currBulletType = Turret.BulletType.blue;
+        //not confusing at all (i mean i can use unisigned int and modulo but some times it is unreadable)
     }
 }

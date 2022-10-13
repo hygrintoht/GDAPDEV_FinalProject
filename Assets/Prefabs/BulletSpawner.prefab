@@ -45,7 +45,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2a0b93a7742634aa2b9c490e9bed12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 6969302386180325567, guid: 278c3af84857ccb44a84b272af6afbb1, type: 3}
+  bulletR: {fileID: 6969302386180325567, guid: 5de0d5e9c30a1e44cbb77fc735a268da, type: 3}
+  bulletG: {fileID: 6969302386180325567, guid: f80172ab0274bf246abc9ef0b56a79b7, type: 3}
+  bulletB: {fileID: 6969302386180325567, guid: 07cc455d5f100e14496bfc0a7772bbf6, type: 3}
   velocity: 80
   audioSource: {fileID: 3058893844267139863}
 --- !u!82 &3058893844267139863
