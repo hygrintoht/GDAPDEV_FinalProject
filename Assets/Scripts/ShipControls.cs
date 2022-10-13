@@ -20,6 +20,7 @@ public class ShipControls : MonoBehaviour
     float fireCountdown = 0;
     bool isFireing = false;
 
+    Vector3 relPos;
 
     void Update()
     {
@@ -32,6 +33,11 @@ public class ShipControls : MonoBehaviour
 
         transform.position += direction * moveSpeed * Time.deltaTime;
         transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad*50.0f);
+
+        relPos = Camera.main.WorldToViewportPoint(transform.position);
+        relPos.x = Mathf.Clamp01(relPos.x);
+        relPos.y = Mathf.Clamp01(relPos.y);
+        transform.position = Camera.main.ViewportToWorldPoint(relPos);
 
         //shooting update(finished)
         if (Input.GetButton("Fire1") || isFireing)
