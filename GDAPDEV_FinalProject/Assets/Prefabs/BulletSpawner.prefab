@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4872541030422216952}
-  - component: {fileID: 6866939227738706941}
   - component: {fileID: 3058893844267139863}
+  - component: {fileID: 1926094640652866154}
   m_Layer: 3
   m_Name: BulletSpawner
   m_TagString: Untagged
@@ -33,23 +33,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6866939227738706941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4872541030422216903}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2a0b93a7742634aa2b9c490e9bed12, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletR: {fileID: 6969302386180325567, guid: 5de0d5e9c30a1e44cbb77fc735a268da, type: 3}
-  bulletG: {fileID: 6969302386180325567, guid: f80172ab0274bf246abc9ef0b56a79b7, type: 3}
-  bulletB: {fileID: 6969302386180325567, guid: 07cc455d5f100e14496bfc0a7772bbf6, type: 3}
-  velocity: 80
-  audioSource: {fileID: 3058893844267139863}
 --- !u!82 &3058893844267139863
 AudioSource:
   m_ObjectHideFlags: 0
@@ -146,3 +129,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1926094640652866154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872541030422216903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3804d9683f01354c84278c5fac2488d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bulletR: {fileID: 6969302386180325567, guid: 5de0d5e9c30a1e44cbb77fc735a268da, type: 3}
+  bulletG: {fileID: 6969302386180325567, guid: f80172ab0274bf246abc9ef0b56a79b7, type: 3}
+  bulletB: {fileID: 6969302386180325567, guid: 07cc455d5f100e14496bfc0a7772bbf6, type: 3}
+  velocity: 80
+  audioSource: {fileID: 3058893844267139863}
