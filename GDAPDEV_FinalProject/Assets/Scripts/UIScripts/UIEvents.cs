@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIEvents : MonoBehaviour
 {
@@ -13,6 +14,17 @@ public class UIEvents : MonoBehaviour
     // [SerializeField] GameObject leaderTab //Enable it Later
     private GameObject currActiveTab = null;
 
+    //Upgrade Handler
+    [SerializeField] GameObject barPrefab;
+    [SerializeField] private List<GameObject> upgrade_1Data;
+    [SerializeField] private List<GameObject> upgrade_2Data;
+    [SerializeField] private List<GameObject> upgrade_3Data;
+    [SerializeField] private List<GameObject> upgrade_4Data;
+    [SerializeField] private List<GameObject> upgrade_5Data;
+
+    //Color management
+
+
     private void Awake()
     {
         //Update the Current Status of each part
@@ -23,6 +35,10 @@ public class UIEvents : MonoBehaviour
     {
         currActiveTab = playTab;
         playTab.SetActive(true);
+
+        //Handle the upgrade handler
+        //init the prefab
+
     }
 
     // Update is called once per frame
@@ -102,6 +118,18 @@ public class UIEvents : MonoBehaviour
     }
 
     // === Config Settings Parameters == //
+
+
+
+
+    //private process
+    private void initUpgrade()
+    {
+        List<int> maxUpgradeData = GameData.Instance.retrieveMaxData();
+        List<int> currUpgradeData = GameData.Instance.retrieveCurrentData();
+
+
+    }
 
 
 
