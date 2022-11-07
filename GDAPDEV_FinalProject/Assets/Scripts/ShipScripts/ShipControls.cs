@@ -1,26 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class ShipControls : MonoBehaviour
 {   
-    //movment parameters
+
+    //ship parameters
     [SerializeField] float moveSpeed = 1.0f;
 
     float hori = 0;
     float vert = 0;
     Vector3 direction = Vector3.zero;
     Vector3 finalDirection = Vector3.zero;
+    Vector3 relPos;
+
+    [SerializeField] int maxHP = 5;
+
+    int HP;
 
     //turret parameters
     [SerializeField] Turret[] turrets;
     [SerializeField] public float fireRate = 1.0f;
     [SerializeField] Turret.BulletType currBulletType = Turret.BulletType.red;
-    
+
     float fireCountdown = 0;
     bool isFireing = false;
 
-    Vector3 relPos;
+    //sheild parameters
+    [SerializeField] int shieldCount = 1;
+    [SerializeField] float shieldDruration = 3.0f;
+
+    float shieldTimer = 0;
+    
+    //unity events
+    void Start()
+    {
+        HP = maxHP;    
+    }
 
     void Update()
     {
@@ -40,7 +57,7 @@ public class ShipControls : MonoBehaviour
         transform.position = Camera.main.ViewportToWorldPoint(relPos);
 
         //shooting update(finished)
-        if (Input.GetButton("Fire1") || isFireing)
+        if (/*Input.GetButton("Fire1") ||*/ isFireing)
         {
             if (fireCountdown <= 0)
             {
@@ -49,7 +66,25 @@ public class ShipControls : MonoBehaviour
             }
             fireCountdown -= Time.deltaTime;
         }
-        
+
+        //shield timer update
+        if (shieldTimer > 0)
+        {
+            shieldTimer -= Time.deltaTime;
+        }
+
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (shieldTimer <= 0)//if sheild timer is not counting down
+        {
+            HP--;
+        }
+        if (HP <= 0)//if hp is lower than 1
+        {
+            ShipDeath();
+        }
     }
 
     void ShootTurrets()//loops through turrets that needs to shoot a bullet type
@@ -58,6 +93,11 @@ public class ShipControls : MonoBehaviour
         {
             turret.Shoot(currBulletType);
         }
+    }
+
+    void ShipDeath()
+    {
+
     }
 
     public void Fire(bool pressed)//changes the ship state if firing
@@ -78,5 +118,24 @@ public class ShipControls : MonoBehaviour
         if (numChange == 1) currBulletType = Turret.BulletType.green;
         if (numChange == 2) currBulletType = Turret.BulletType.blue;
         //not confusing at all (i mean i can use unisigned int and modulo but some times it is unreadable)
+    }
+
+    public void DodgeRoll(bool direction)//0 left 1 right (dodge roll(no iframes because of shield))
+    {
+
+    }
+
+    public void ActivateShield()//more of invincibility rather than shields
+    {
+        if (shieldCount > 0)
+        {
+            shieldCount--;
+            shieldTimer = shieldDruration;
+        }
+    }
+
+    public void Bomb()//i think im going to scrap this unless i know how to implement this to the enemy manager
+    {
+
     }
 }
