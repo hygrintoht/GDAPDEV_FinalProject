@@ -162,33 +162,67 @@ public class UIEvents : MonoBehaviour
 
     public void OnUpgrade_2()
     {
-        ResetBar();
-        GameData.Instance.IncrementData(2);
-        InitUpgrade();
+        if (currencyAvail > 1000)
+        {
+            ResetBar();
+            GameData.Instance.IncrementData(2);
+            InitUpgrade();
+
+            GameData.Instance.UpdateCurrency(-1000);
+            UpdateCurrency();
+        }
     }
 
     public void OnUpgrade_3()
     {
-        ResetBar();
-        GameData.Instance.IncrementData(3);
-        InitUpgrade();
+        if (currencyAvail > 1000)
+        {
+            ResetBar();
+            GameData.Instance.IncrementData(3);
+            InitUpgrade();
+
+            GameData.Instance.UpdateCurrency(-1000);
+            UpdateCurrency();
+        }
     }
 
     public void OnUpgrade_4()
     {
-        ResetBar();
-        GameData.Instance.IncrementData(4);
-        InitUpgrade();
+        if (currencyAvail > 1000)
+        {
+            ResetBar();
+            GameData.Instance.IncrementData(4);
+            InitUpgrade();
+
+            GameData.Instance.UpdateCurrency(-1000);
+            UpdateCurrency();
+        }
     }
 
     public void OnUpgrade_5()
     {
-        ResetBar();
-        GameData.Instance.IncrementData(5);
-        InitUpgrade();
+        if (currencyAvail > 1000)
+        {
+            ResetBar();
+            GameData.Instance.IncrementData(5);
+            InitUpgrade();
+
+            GameData.Instance.UpdateCurrency(-1000);
+            UpdateCurrency();
+        }
     }
 
     // === Config Settings Parameters == //
+    public void AddMoney()
+    {
+        GameData.Instance.UpdateCurrency(10000);
+        int totalMoney = GameData.Instance.RetrieveCurrency();
+        currencyAvail = totalMoney;
+
+        currencyTxt.text = $"{totalMoney}";
+
+    }
+
 
 
     //private process

@@ -26,7 +26,7 @@ public class GameData : MonoBehaviour
 
     //Other useful Data
     // private int score = 0;
-    //private int highScore = 0;
+    // private int highScore = 0;
     private int totalCurrency = 2010;
 
     //Cheat Data
