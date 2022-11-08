@@ -45,11 +45,15 @@ public class UIEvents : MonoBehaviour
     private void Awake()
     {
         //Update the Current Status of each part
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        //Pre Start
+        barHolder = new List<GameObject>();
+
        //Starting Tab
         currActiveSection = playSection;
         playSection.SetActive(true);
@@ -120,50 +124,59 @@ public class UIEvents : MonoBehaviour
     }
 
     // ===== Level Selector Tab ====== //
-    void OnLevelSelect_1()
+    public void OnLevelSelect_1()
     {
-        
+        //Switch Scene from one to another
     }
 
-    void OnLevelSelect_2()
+    public void OnLevelSelect_2()
     {
-
+        //Switch Scene from one to another
     }
 
-    void OnLevelSelect_3()
+    public void OnLevelSelect_3()
     {
-
+        //Switch Scene from one to another
     }
 
     // === Upgrade Button Presses === //
-    void OnUpgrade_1()
+    public void OnUpgrade_1()
     {
-
+        //if Success
+        resetBar();
+        GameData.Instance.incrementData(1);
+        InitUpgrade();
     }
 
-    void OnUpgrade_2()
+    public void OnUpgrade_2()
     {
-
+        resetBar();
+        GameData.Instance.incrementData(2);
+        InitUpgrade();
     }
 
-    void OnUpgrade_3()
+    public void OnUpgrade_3()
     {
-
+        resetBar();
+        GameData.Instance.incrementData(3);
+        InitUpgrade();
     }
 
-    void OnUpgrade_4()
+    public void OnUpgrade_4()
     {
-
+        resetBar();
+        GameData.Instance.incrementData(4);
+        InitUpgrade();
     }
 
-    void OnUpgrade_5()
+    public void OnUpgrade_5()
     {
-
+        resetBar();
+        GameData.Instance.incrementData(5);
+        InitUpgrade();
     }
 
     // === Config Settings Parameters == //
-
-
 
 
     //private process
@@ -224,13 +237,22 @@ public class UIEvents : MonoBehaviour
                     Image barCopy = bar.GetComponent<Image>();
                     barCopy.color = filledUpColor;
                 }
-               
+
+                barHolder.Add(bar);
             }
         }
 
         //GameData.Instance.printData();
     }
 
+    private void resetBar()
+    {
+       foreach (GameObject b in barHolder)
+        {
+            GameObject.Destroy(b);
+        }
 
+        barHolder.Clear();
+    }
 
 }

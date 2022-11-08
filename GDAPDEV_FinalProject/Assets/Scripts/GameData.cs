@@ -29,6 +29,10 @@ public class GameData : MonoBehaviour
     //private int highScore = 0;
     //private int totalCurrency = 0;
 
+    //Cheat Data
+    //bool isUnliHealth
+    //bool isOneHitKill
+
 
     private void Awake()
     {
