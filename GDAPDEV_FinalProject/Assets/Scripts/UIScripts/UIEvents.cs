@@ -223,6 +223,18 @@ public class UIEvents : MonoBehaviour
 
     }
 
+    public void ResetUpgrade()
+    {
+        //Upgrade Data
+        GameData.Instance.ResetData();
+        ResetBar();
+        InitUpgrade();
+
+        //Currency
+        UpdateCurrency();
+
+    }
+
 
 
     //private process
@@ -248,10 +260,6 @@ public class UIEvents : MonoBehaviour
 
     }
 
-    private void CurrencyInit()
-    {
-
-    }
 
     private void CompressPanel()
     {

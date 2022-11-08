@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameData : MonoBehaviour
+public class GameData: MonoBehaviour
 {
     //Singleton Design Pattern
     public static GameData Instance { get; private set; }
@@ -119,6 +119,19 @@ public class GameData : MonoBehaviour
     public void UpdateCurrency(int increments)
     {
         totalCurrency += increments;
+    }
+
+    public void ResetData()
+    {
+        //Currency
+        totalCurrency = 0;
+
+        //Upgrade Stats
+        currHealthTick = 0;
+        currShieldTick = 0;
+        currReviveTick = 0;
+        currDamageTick = 0;
+        currAttkSpdTick = 0;
     }
 
     //private function
