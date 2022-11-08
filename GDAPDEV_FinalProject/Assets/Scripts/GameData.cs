@@ -17,7 +17,7 @@ public class GameData : MonoBehaviour
 
     //Player Data
     //Create List to temporary store the data as tick
-    private int currHealthTick = 2;
+    private int currHealthTick = 0;
     private int currShieldTick = 0;
     private int currReviveTick = 0;
     private int currDamageTick = 0;
@@ -27,7 +27,7 @@ public class GameData : MonoBehaviour
     //Other useful Data
     // private int score = 0;
     //private int highScore = 0;
-    //private int totalCurrency = 0;
+    private int totalCurrency = 2010;
 
     //Cheat Data
     //bool isUnliHealth
@@ -75,7 +75,7 @@ public class GameData : MonoBehaviour
     }
 
 
-    public void incrementData(int type)
+    public void IncrementData(int type)
     {
         switch (type)
         {
@@ -110,6 +110,16 @@ public class GameData : MonoBehaviour
     }
 
     //public void retrieveData;
+
+    public int RetrieveCurrency()
+    {
+        return totalCurrency;
+    }
+
+    public void UpdateCurrency(int increments)
+    {
+        totalCurrency += increments;
+    }
 
     //private function
     

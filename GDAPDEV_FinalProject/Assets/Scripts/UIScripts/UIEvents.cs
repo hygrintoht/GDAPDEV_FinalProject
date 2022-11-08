@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class UIEvents : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class UIEvents : MonoBehaviour
     [SerializeField] Image playTab;
     [SerializeField] Image loadoutTab;
     [SerializeField] Image configTab;
+    [SerializeField] TextMeshProUGUI currencyTxt;
 
     private Image activeTab;
+    private int currencyAvail;
 
     [Header("Section Holder")]
     //Parameter Handler
@@ -36,8 +39,6 @@ public class UIEvents : MonoBehaviour
     private List<GameObject> panelHolder;
     private List<GameObject> barHolder;
 
-
-
     //Color for UpgradeBar
     Color emptyUpColor;
     Color filledUpColor;
@@ -60,10 +61,12 @@ public class UIEvents : MonoBehaviour
         activeTab = playTab;
 
         //Color Handling
-
         InitColor();
 
-        //Handle the upgrade handler
+        //Currency Handling
+        InitCurrency();
+
+    //Handle the upgrade handler
 
         //compress the panel holder for easier organization
         CompressPanel(); ;
@@ -143,36 +146,45 @@ public class UIEvents : MonoBehaviour
     public void OnUpgrade_1()
     {
         //if Success
-        resetBar();
-        GameData.Instance.incrementData(1);
-        InitUpgrade();
+        if (currencyAvail > 1000)
+        {
+
+
+            ResetBar();
+            GameData.Instance.IncrementData(1);
+            InitUpgrade();
+
+            GameData.Instance.UpdateCurrency(-1000);
+            UpdateCurrency();
+        }
+
     }
 
     public void OnUpgrade_2()
     {
-        resetBar();
-        GameData.Instance.incrementData(2);
+        ResetBar();
+        GameData.Instance.IncrementData(2);
         InitUpgrade();
     }
 
     public void OnUpgrade_3()
     {
-        resetBar();
-        GameData.Instance.incrementData(3);
+        ResetBar();
+        GameData.Instance.IncrementData(3);
         InitUpgrade();
     }
 
     public void OnUpgrade_4()
     {
-        resetBar();
-        GameData.Instance.incrementData(4);
+        ResetBar();
+        GameData.Instance.IncrementData(4);
         InitUpgrade();
     }
 
     public void OnUpgrade_5()
     {
-        resetBar();
-        GameData.Instance.incrementData(5);
+        ResetBar();
+        GameData.Instance.IncrementData(5);
         InitUpgrade();
     }
 
@@ -202,6 +214,11 @@ public class UIEvents : MonoBehaviour
 
     }
 
+    private void CurrencyInit()
+    {
+
+    }
+
     private void CompressPanel()
     {
         panelHolder = new List<GameObject>();
@@ -212,11 +229,9 @@ public class UIEvents : MonoBehaviour
         panelHolder.Add(upgrade_5DataPanel);
     }
 
-
     private void InitUpgrade()
     {
         List<int> maxUpgradeData = GameData.Instance.retrieveMaxData();
-
         List<int> currUpgradeData = GameData.Instance.retrieveCurrentData();
 
         for (int i = 0; i < panelHolder.Count; i++) //change the max later
@@ -245,7 +260,7 @@ public class UIEvents : MonoBehaviour
         //GameData.Instance.printData();
     }
 
-    private void resetBar()
+    private void ResetBar()
     {
        foreach (GameObject b in barHolder)
         {
@@ -253,6 +268,22 @@ public class UIEvents : MonoBehaviour
         }
 
         barHolder.Clear();
+    }
+
+    private void InitCurrency()
+    {
+        int totalMoney = GameData.Instance.RetrieveCurrency();
+        currencyAvail = totalMoney;
+
+        currencyTxt.text = $"{totalMoney}";
+    }
+
+    private void UpdateCurrency()
+    {
+        int totalMoney = GameData.Instance.RetrieveCurrency();
+        currencyAvail = totalMoney;
+
+        currencyTxt.text = $"{totalMoney}";
     }
 
 }
