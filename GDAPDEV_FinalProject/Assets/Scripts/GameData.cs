@@ -126,6 +126,7 @@ public class GameData: MonoBehaviour
         //Currency
         totalCurrency = 0;
 
+
         //Upgrade Stats
         currHealthTick = 0;
         currShieldTick = 0;
