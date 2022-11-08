@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 
 public class UIEvents : MonoBehaviour
@@ -130,6 +131,7 @@ public class UIEvents : MonoBehaviour
     public void OnLevelSelect_1()
     {
         //Switch Scene from one to another
+        SceneManager.LoadScene(2);
     }
 
     public void OnLevelSelect_2()
@@ -223,6 +225,18 @@ public class UIEvents : MonoBehaviour
 
     }
 
+    public void ResetUpgrade()
+    {
+        //Upgrade Data
+        GameData.Instance.ResetData();
+        ResetBar();
+        InitUpgrade();
+
+        //Currency
+        UpdateCurrency();
+
+    }
+
 
 
     //private process
@@ -248,10 +262,6 @@ public class UIEvents : MonoBehaviour
 
     }
 
-    private void CurrencyInit()
-    {
-
-    }
 
     private void CompressPanel()
     {
