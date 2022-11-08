@@ -21,6 +21,6 @@ public class ShipMovment : MonoBehaviour
         finalDirection = new Vector3(hori, vert, 2.0f);
 
         transform.position += direction * moveSpeed * Time.deltaTime; //+ transform.forward * forwardMoveSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad*50.0f);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad*5.0f);
     }
 }
