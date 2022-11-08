@@ -21,7 +21,7 @@ public class ShipControls : MonoBehaviour
 
     //turret parameters
     [SerializeField] Turret[] turrets;
-    [SerializeField] public float fireRate = 1.0f;
+    [SerializeField] public float fireRate = 10.0f;
     [SerializeField] Turret.BulletType currBulletType = Turret.BulletType.red;
 
     float fireCountdown = 0;
@@ -49,7 +49,7 @@ public class ShipControls : MonoBehaviour
         finalDirection = new Vector3(hori, vert, 2.0f);
 
         transform.position += direction * moveSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad*50.0f);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad*100.0f);
 
         relPos = Camera.main.WorldToViewportPoint(transform.position);
         relPos.x = Mathf.Clamp01(relPos.x);
