@@ -35,11 +35,11 @@ public class Turret : MonoBehaviour
         bullet.rb.velocity = Vector3.zero;
         bullet.rb.angularVelocity = Vector3.zero;
         bullet.rb.AddForce(transform.forward * bulletVelocity, ForceMode.VelocityChange);
-        bullet.Init(KillShape);
+        bullet.Init(KillBullet);
         audioSource.Play();
     }
 
-    private void KillShape(Bullet bullet)
+    private void KillBullet(Bullet bullet)
     {
         pool.Release(bullet);
     }

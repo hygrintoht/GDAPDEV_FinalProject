@@ -40,6 +40,7 @@ public class SpawnerScript : MonoBehaviour
             enemy.SetEnemyParams();
             enemy.transform.position = RandomPositionInSpawner();
             enemy.MoveToDirection(spawnerDirection);
+            enemy.Init(KillEnemy);
             spawnTimer = Random.Range(5.0f, 15.0f);
         }
     }
@@ -47,5 +48,10 @@ public class SpawnerScript : MonoBehaviour
     Vector3 RandomPositionInSpawner()
     {
         return center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.z / 2, size.z / 2));
+    }
+
+    private void KillEnemy(EnemyBehavior enemy)
+    {
+        pool.Release(enemy);
     }
 }

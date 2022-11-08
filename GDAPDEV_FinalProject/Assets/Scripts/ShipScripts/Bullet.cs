@@ -15,12 +15,6 @@ public class Bullet : MonoBehaviour
 
     Action<Bullet> action;
 
-    void Start()
-    {
-        //bulletRend = GetComponent<MeshRenderer>(); 
-        //rb = GetComponent<Rigidbody>();
-    }
-
     void Update()
     {
         if(transform.position.z > 75)

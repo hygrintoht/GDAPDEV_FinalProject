@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -16,9 +17,11 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
     [SerializeField] float bulletDamage = 5.0f;
     [SerializeField] float moveSpeed = 5.0f;
-    //[SerializeField] float timeAlive = 15.0f;
+    [SerializeField] float timeAlive = 20.0f;
 
+    Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
+    float timerDeath;
 
     void Start()
     {
@@ -28,10 +31,15 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = gameObject.transform.position + (moveDir * moveSpeed * Time.deltaTime);
+        timerDeath -= Time.deltaTime;
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+            action(this);
+        }
+        if(timerDeath <= 0)
+        {
+            action(this);
         }
     }
 
@@ -55,9 +63,14 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    public void Init(Action<EnemyBehavior> act)
+    {
+        action = act;
+    }
+
     public void SetEnemyParams()
     {
-        switch (Random.Range(0, 3))
+        switch (UnityEngine.Random.Range(0, 3))
         {
             case 0:
                 enemyColor = EnemyColor.red;
@@ -72,6 +85,7 @@ public class EnemyBehavior : MonoBehaviour
                 enemyRend.material = materialB;
                 break;
         }
+        timerDeath = timeAlive;
     }
 
     public void MoveToDirection(Direction dir)
@@ -82,5 +96,9 @@ public class EnemyBehavior : MonoBehaviour
         if (dir == Direction.back) moveDir = Vector3.back;
         if (dir == Direction.up) moveDir = Vector3.up;
         if (dir == Direction.forward) moveDir = Vector3.forward;
+    }
+    public void MoveToDistanceThenTurn()
+    {
+
     }
 }

@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShipControls : MonoBehaviour
-{   
+{
+    //input parameters
+    [SerializeField]PlayerInput playerInput;
+    Vector2 input;
+    float gravityValue = 2.0f;
 
     //ship parameters
     [SerializeField] float moveSpeed = 1.0f;
@@ -41,9 +46,10 @@ public class ShipControls : MonoBehaviour
 
     void Update()
     {
+        input = playerInput.actions["Move"].ReadValue<Vector2>() * gravityValue;
         //movment update(to be changed for the tutorial)
-        hori = Input.GetAxis("Horizontal");
-        vert = Input.GetAxis("Vertical");
+        hori = input.x;//Input.GetAxis("Horizontal");
+        vert = input.y;//Input.GetAxis("Vertical");
 
         direction = new Vector3(hori, vert, 0);
         finalDirection = new Vector3(hori, vert, 2.0f);
