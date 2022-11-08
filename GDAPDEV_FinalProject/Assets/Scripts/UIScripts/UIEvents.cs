@@ -5,25 +5,42 @@ using UnityEngine.UI;
 
 public class UIEvents : MonoBehaviour
 {
+    [Header("Tab Holder")]
+    [SerializeField] Image playTab;
+    [SerializeField] Image loadoutTab;
+    [SerializeField] Image configTab;
 
+    private Image activeTab;
 
+    [Header("Section Holder")]
     //Parameter Handler
-    [SerializeField] GameObject playTab;
-    [SerializeField] GameObject loadoutTab;
-    [SerializeField] GameObject configTab;
+    [SerializeField] GameObject playSection;
+    [SerializeField] GameObject loadoutSection;
+    [SerializeField] GameObject configSection;
     // [SerializeField] GameObject leaderTab //Enable it Later
-    private GameObject currActiveTab = null;
 
-    //Upgrade Handler
+    private GameObject currActiveSection;
+    //Color for Tab
+    Color tabOrigColor;
+    Color pressColor;
+
+
+    [Header("Upgrade Holder")]
     [SerializeField] GameObject barPrefab;
-    [SerializeField] private List<GameObject> upgrade_1Data;
-    [SerializeField] private List<GameObject> upgrade_2Data;
-    [SerializeField] private List<GameObject> upgrade_3Data;
-    [SerializeField] private List<GameObject> upgrade_4Data;
-    [SerializeField] private List<GameObject> upgrade_5Data;
+    [SerializeField] private GameObject upgrade_1DataPanel; //try to experiment
+    [SerializeField] private GameObject upgrade_2DataPanel;
+    [SerializeField] private GameObject upgrade_3DataPanel;
+    [SerializeField] private GameObject upgrade_4DataPanel;
+    [SerializeField] private GameObject upgrade_5DataPanel;
 
-    //Color management
+    private List<GameObject> panelHolder;
+    private List<GameObject> barHolder;
 
+
+
+    //Color for UpgradeBar
+    Color emptyUpColor;
+    Color filledUpColor;
 
     private void Awake()
     {
@@ -33,12 +50,24 @@ public class UIEvents : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currActiveTab = playTab;
-        playTab.SetActive(true);
+       //Starting Tab
+        currActiveSection = playSection;
+        playSection.SetActive(true);
+        activeTab = playTab;
+
+        //Color Handling
+
+        InitColor();
 
         //Handle the upgrade handler
-        //init the prefab
 
+        //compress the panel holder for easier organization
+        CompressPanel(); ;
+
+        //init the prefab
+        InitUpgrade();
+
+        
     }
 
     // Update is called once per frame
@@ -53,26 +82,41 @@ public class UIEvents : MonoBehaviour
     public void OnPressPlayTab()
     {
         //activate the tab and deactivate the other tab
-        currActiveTab.SetActive(false);
-        playTab.SetActive(true);
-        currActiveTab = playTab;
+        currActiveSection.SetActive(false);
+        playSection.SetActive(true);
+        currActiveSection = playSection;
+
+        //Color Handling
+        activeTab.color = tabOrigColor;
+        playTab.color = pressColor;
+        activeTab = playTab;
 
     }
 
     public void OnPressLoadoutTab()
     {
         //activate the tab and deactivate the other tab
-        currActiveTab.SetActive(false);
-        loadoutTab.SetActive(true);
-        currActiveTab = loadoutTab;
+        currActiveSection.SetActive(false);
+        loadoutSection.SetActive(true);
+        currActiveSection = loadoutSection;
+
+        //Color Handling
+        activeTab.color = tabOrigColor;
+        loadoutTab.color = pressColor;
+        activeTab = loadoutTab;
     }
 
     public void OnPressConfigTab()
     {
         //activate the tab and deactivate the other tab
-        currActiveTab.SetActive(false);
-        configTab.SetActive(true);
-        currActiveTab = configTab;
+        currActiveSection.SetActive(false);
+        configSection.SetActive(true);
+        currActiveSection = configSection;
+
+        //Color Handling
+        activeTab.color = tabOrigColor;
+        configTab.color = pressColor;
+        activeTab = configTab;
     }
 
     // ===== Level Selector Tab ====== //
@@ -123,12 +167,68 @@ public class UIEvents : MonoBehaviour
 
 
     //private process
-    private void initUpgrade()
+    private void InitColor()
+    {
+        //For Tab Color Handling
+        tabOrigColor = new Color();
+        tabOrigColor = playTab.GetComponent<Image>().color;
+        Color tabColor = new Color(tabOrigColor.r + 0.15f, tabOrigColor.g + 0.15f,
+            tabOrigColor.b + 0.15f, tabOrigColor.a); //Custom Color
+
+        pressColor = tabColor;
+        activeTab.color = pressColor;
+
+
+        //Upgrade Color Handling
+        emptyUpColor = barPrefab.GetComponent<Image>().color;
+        Color upgradeColor = new Color();
+        upgradeColor = Color.red;
+
+        filledUpColor = upgradeColor;
+
+
+    }
+
+    private void CompressPanel()
+    {
+        panelHolder = new List<GameObject>();
+        panelHolder.Add(upgrade_1DataPanel);
+        panelHolder.Add(upgrade_2DataPanel);
+        panelHolder.Add(upgrade_3DataPanel);
+        panelHolder.Add(upgrade_4DataPanel);
+        panelHolder.Add(upgrade_5DataPanel);
+    }
+
+
+    private void InitUpgrade()
     {
         List<int> maxUpgradeData = GameData.Instance.retrieveMaxData();
+
         List<int> currUpgradeData = GameData.Instance.retrieveCurrentData();
 
+        for (int i = 0; i < panelHolder.Count; i++) //change the max later
+        {
+            for (int j = 0; j < maxUpgradeData[i]; j++)
+            {
+                GameObject bar = Instantiate(barPrefab);
+                bar.transform.SetParent(panelHolder[i].transform, false);
 
+                //change color if already upgraded
+                if(j >= currUpgradeData[i])
+                {
+                 
+                }
+
+                else
+                {
+                    Image barCopy = bar.GetComponent<Image>();
+                    barCopy.color = filledUpColor;
+                }
+               
+            }
+        }
+
+        //GameData.Instance.printData();
     }
 
 
