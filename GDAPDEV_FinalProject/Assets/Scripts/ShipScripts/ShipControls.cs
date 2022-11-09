@@ -35,7 +35,7 @@ public class ShipControls : MonoBehaviour
 
     //sheild parameters
     [SerializeField] int shieldCount = 1;
-    [SerializeField] float shieldDruration = 3.0f;
+    [SerializeField] float shieldDuration = 3.0f;
 
     float shieldTimer = 0;
     
@@ -155,7 +155,7 @@ public class ShipControls : MonoBehaviour
         if (shieldCount > 0)
         {
             shieldCount--;
-            shieldTimer = shieldDruration;
+            shieldTimer = shieldDuration;
         }
     }
 
