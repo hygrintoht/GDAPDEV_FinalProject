@@ -746,14 +746,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6206175510911438257, guid: 1bfdf451609d9834d947ba00f2fe0aec, type: 3}
-      propertyPath: MaxDistance
-      value: 50.184647
-      objectReference: {fileID: 0}
-    - target: {fileID: 8942390252437801618, guid: 1bfdf451609d9834d947ba00f2fe0aec, type: 3}
-      propertyPath: fireRate
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bfdf451609d9834d947ba00f2fe0aec, type: 3}
 --- !u!1 &1313178614
@@ -1285,14 +1277,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1821476913}
-    - target: {fileID: 1188168877, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
-      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Fire
-      objectReference: {fileID: 0}
-    - target: {fileID: 1188168877, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
-      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Fire
-      objectReference: {fileID: 0}
     - target: {fileID: 1046921378108010784, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
       propertyPath: m_Name
       value: Game UI
@@ -1389,9 +1373,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3880496304882501302, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
-      propertyPath: m_Value
-      value: 1
+    - target: {fileID: 1561689267814921911, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
+      propertyPath: m_Name
+      value: Joystick
       objectReference: {fileID: 0}
     - target: {fileID: 3892200778378696884, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
       propertyPath: m_AnchorMax.x
