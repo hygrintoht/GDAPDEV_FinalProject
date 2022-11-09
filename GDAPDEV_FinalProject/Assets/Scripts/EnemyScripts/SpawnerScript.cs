@@ -10,6 +10,8 @@ public class SpawnerScript : MonoBehaviour
 
     ObjectPool<EnemyBehavior> pool;
 
+    bool spawnerStatus = true;
+
     float spawnTimer;
     Vector3 center;
     Vector3 size;
@@ -33,15 +35,17 @@ public class SpawnerScript : MonoBehaviour
 
     void Update()
     {
-        spawnTimer -= Time.deltaTime;
-        if(spawnTimer <= 0)
-        {
-            EnemyBehavior enemy = pool.Get();
-            enemy.SetEnemyParams();
-            enemy.transform.position = RandomPositionInSpawner();
-            enemy.MoveToDirection(spawnerDirection);
-            enemy.Init(KillEnemy);
-            spawnTimer = Random.Range(5.0f, 15.0f);
+        if (spawnerStatus) {
+            spawnTimer -= Time.deltaTime;
+            if (spawnTimer <= 0)
+            {
+                EnemyBehavior enemy = pool.Get();
+                enemy.SetEnemyParams();
+                enemy.transform.position = RandomPositionInSpawner();
+                enemy.MoveToDirection(spawnerDirection);
+                enemy.Init(KillEnemy);
+                spawnTimer = Random.Range(5.0f, 15.0f);
+            }
         }
     }
 
@@ -53,5 +57,10 @@ public class SpawnerScript : MonoBehaviour
     private void KillEnemy(EnemyBehavior enemy)
     {
         pool.Release(enemy);
+    }
+
+    public void ChangeSpwanerActiveStatus(bool status)
+    {
+        spawnerStatus = status;
     }
 }
