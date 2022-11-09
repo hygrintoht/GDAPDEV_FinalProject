@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -128,6 +129,24 @@ public class ShipControls : MonoBehaviour
 
     public void DodgeRoll(bool direction)//0 left 1 right (dodge roll(no iframes because of shield))
     {
+        Vector3 target;
+        float rollDistance = 2.0f;
+        if (direction) target = gameObject.transform.position + (Vector3.right * rollDistance);
+        else target = gameObject.transform.position + (Vector3.left * rollDistance);
+
+        StartCoroutine(DodgeRolling(gameObject.transform.position, target));
+    }
+
+    IEnumerator DodgeRolling(Vector3 start, Vector3 target)
+    {
+        float rollTimer = 0;
+        float rollDuration = .35f;
+        while(rollTimer < rollDuration)
+        {
+            gameObject.transform.position = Vector3.Lerp(start, target, rollTimer/rollDuration);
+            rollTimer += Time.deltaTime;
+            yield return null;
+        }
 
     }
 

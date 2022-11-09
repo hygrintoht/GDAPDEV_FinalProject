@@ -1373,10 +1373,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1561689267814921911, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
-      propertyPath: m_Name
-      value: Joystick
-      objectReference: {fileID: 0}
     - target: {fileID: 3892200778378696884, guid: 538234cc75b84624bb773819ab0e5ea1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
