@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
-        if(transform.position.z > 75)
+        if(transform.position.z > 75 || transform.position.z < -25)
         {
             action(this);
         }    

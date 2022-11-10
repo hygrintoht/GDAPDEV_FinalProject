@@ -253,6 +253,7 @@ GameObject:
   - component: {fileID: 3952910295995234869}
   - component: {fileID: 8942390252437801618}
   - component: {fileID: 1821476917}
+  - component: {fileID: 9217925605835729085}
   m_Layer: 3
   m_Name: ShipObject
   m_TagString: Untagged
@@ -492,7 +493,7 @@ MonoBehaviour:
   fireRate: 10
   currBulletType: 0
   shieldCount: 1
-  shieldDruration: 3
+  shieldDuration: 3
 --- !u!114 &1821476917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -523,6 +524,19 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &9217925605835729085
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785395578697117542}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &785395580189837623
 GameObject:
   m_ObjectHideFlags: 0
