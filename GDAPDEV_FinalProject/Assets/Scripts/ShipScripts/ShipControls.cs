@@ -23,7 +23,7 @@ public class ShipControls : MonoBehaviour
 
     [SerializeField] int maxHP = 5;
 
-    int HP;
+    [SerializeField]int HP;
 
     //turret parameters
     [SerializeField] Turret[] turrets;
@@ -130,7 +130,7 @@ public class ShipControls : MonoBehaviour
     public void DodgeRoll(bool direction)//0 left 1 right (dodge roll(no iframes because of shield))
     {
         Vector3 target;
-        float rollDistance = 2.0f;
+        float rollDistance = 2.5f;
         if (direction) target = gameObject.transform.position + (Vector3.right * rollDistance);
         else target = gameObject.transform.position + (Vector3.left * rollDistance);
 

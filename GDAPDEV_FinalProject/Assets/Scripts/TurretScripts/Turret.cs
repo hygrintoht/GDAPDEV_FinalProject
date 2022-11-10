@@ -6,7 +6,7 @@ using UnityEngine.Pool;
 
 public class Turret : MonoBehaviour
 {
-    public enum BulletType { red = 0, green = 1, blue = 2 }
+    public enum BulletType { red = 0, green = 1, blue = 2, none = 3}
 
     [SerializeField] Bullet bulletPrefab;
     [SerializeField] float bulletVelocity = 60.0f;

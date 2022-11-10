@@ -17,11 +17,11 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
     [SerializeField] float bulletDamage = 5.0f;
     [SerializeField] float moveSpeed = 5.0f;
-    [SerializeField] float timeAlive = 20.0f;
+    //[SerializeField] float timeAlive = 20.0f;
 
     Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
-    float timerDeath;
+    //float timerDeath;
 
     void Start()
     {
@@ -31,13 +31,17 @@ public class EnemyBehavior : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = gameObject.transform.position + (moveDir * moveSpeed * Time.deltaTime);
-        timerDeath -= Time.deltaTime;
+        //timerDeath -= Time.deltaTime;
 
         if(health <= 0)
         {
             action(this);
         }
-        if(timerDeath <= 0)
+        /*if(timerDeath <= 0)
+        {
+            action(this);
+        }*/
+        if (transform.position.z > 75 || transform.position.z < -10 || transform.position.y > 30 || transform.position.y < -15 || transform.position.x > 60 || transform.position.x < -60)
         {
             action(this);
         }
@@ -85,7 +89,7 @@ public class EnemyBehavior : MonoBehaviour
                 enemyRend.material = materialB;
                 break;
         }
-        timerDeath = timeAlive;
+        //timerDeath = timeAlive;
     }
 
     public void MoveToDirection(Direction dir)
