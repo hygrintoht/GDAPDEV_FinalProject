@@ -29,9 +29,6 @@ EditorUserSettings:
     UnityEditor.ShaderGraph.InspectorWindow:
       value: 18135939215a0a5004000b0e15254b524c030a3f2964643d120d1230e9e93a3fd6e826abbd2e2d293c4ead313b08042de6030a0afa240c0d020be94c4ba8455d41895ac825e0100ec20313c0d91cddccd3d0c7efcca9bd808a91f0beb6fdd1cbfceba0b9f0b3bed8e8f5ade1ff8c978883d3f59e9e909989eacfcc
       flags: 0
-    UnityRemoteDevice:
-      value: 225f4d46245b0d4902070862342649191512
-      flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
       flags: 0
