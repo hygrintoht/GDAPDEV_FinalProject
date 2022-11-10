@@ -132,7 +132,6 @@ public class UIEvents : MonoBehaviour
     {
         //Switch Scene from one to another
         SceneManager.LoadScene(2);
-        GameData.Instance.StoreAll();
     }
 
     public void OnLevelSelect_2()
