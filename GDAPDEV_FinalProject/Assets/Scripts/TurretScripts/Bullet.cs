@@ -13,8 +13,6 @@ public class Bullet : MonoBehaviour
     [SerializeField]public Rigidbody rb;
     [SerializeField]Renderer bulletRend;
 
-    [SerializeField] private ParticleSystem impactParticles;
-
     Action<Bullet> action;
 
     void Update()
@@ -27,14 +25,6 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        impactParticles.Play();
-        StartCoroutine(Death());
-        
-    }
-
-    IEnumerator Death()
-    {
-        yield return new WaitForSeconds(0.1f);
         action(this);
     }
 

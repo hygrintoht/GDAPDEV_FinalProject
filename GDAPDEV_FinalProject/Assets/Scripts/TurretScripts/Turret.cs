@@ -11,7 +11,6 @@ public class Turret : MonoBehaviour
     [SerializeField] Bullet bulletPrefab;
     [SerializeField] float bulletVelocity = 60.0f;
     [SerializeField] AudioSource audioSource;
-    [SerializeField] private ParticleSystem muzzleParticles;
 
     ObjectPool<Bullet> pool;
 
@@ -38,7 +37,6 @@ public class Turret : MonoBehaviour
         bullet.rb.AddForce(transform.forward * bulletVelocity, ForceMode.VelocityChange);
         bullet.Init(KillBullet);
         audioSource.Play();
-        muzzleParticles.Play();
     }
 
     private void KillBullet(Bullet bullet)

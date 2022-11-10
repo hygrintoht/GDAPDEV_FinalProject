@@ -38,9 +38,7 @@ public class ShipControls : MonoBehaviour
     [SerializeField] float shieldDuration = 3.0f;
 
     float shieldTimer = 0;
-
-    [SerializeField] private ParticleSystem deathExplotion;
-
+    
     //unity events
     void Start()
     {
@@ -106,7 +104,7 @@ public class ShipControls : MonoBehaviour
 
     void ShipDeath()
     {
-        deathExplotion.Play();
+
     }
 
     public void Fire(bool pressed)//changes the ship state if firing

@@ -7,7 +7,6 @@ public class SpawnerScript : MonoBehaviour
 {
     [SerializeField] EnemyBehavior enemyPrefab;
     [SerializeField] EnemyBehavior.Direction spawnerDirection;
-    [SerializeField] private AudioSource deathSound;
 
     ObjectPool<EnemyBehavior> pool;
 
@@ -57,8 +56,6 @@ public class SpawnerScript : MonoBehaviour
 
     private void KillEnemy(EnemyBehavior enemy)
     {
-        if(enemy.Health <=0 )
-            deathSound.Play();
         pool.Release(enemy);
     }
 
