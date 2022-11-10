@@ -19,10 +19,14 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] float moveSpeed = 5.0f;
     //[SerializeField] float timeAlive = 20.0f;
 
+    [Header("Particle System with Sound")]
+    [SerializeField] private ParticleSystem deathParticles;
+
     Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
     //float timerDeath;
 
+    public float Health { get { return health; } }
     void Start()
     {
         SetEnemyParams();
@@ -35,7 +39,8 @@ public class EnemyBehavior : MonoBehaviour
 
         if(health <= 0)
         {
-            action(this);
+            deathParticles.Play();
+            StartCoroutine(Death());
         }
         /*if(timerDeath <= 0)
         {
@@ -103,6 +108,13 @@ public class EnemyBehavior : MonoBehaviour
     }
     public void MoveToDistanceThenTurn()
     {
+
+    }
+
+    IEnumerator Death()
+    {
+        yield return new WaitForSeconds(0.1f);
+        action(this);
 
     }
 }
