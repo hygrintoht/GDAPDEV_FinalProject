@@ -101,6 +101,7 @@ public class EnemyBehavior : MonoBehaviour
                 enemyRend.material = materialB;
                 break;
         }
+        health = 30.0f;
         //timerDeath = timeAlive;
     }
 
