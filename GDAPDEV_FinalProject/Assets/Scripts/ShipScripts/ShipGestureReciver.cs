@@ -39,7 +39,7 @@ public class ShipGestureReciver : MonoBehaviour
         }
         if(args.SwipeDirection == SwipeEventArgs.SwipeDirections.LEFT)
         {
-            ship.DodgeRoll(false);
+            ship.DodgeRoll(false);   
         }
     }
 
