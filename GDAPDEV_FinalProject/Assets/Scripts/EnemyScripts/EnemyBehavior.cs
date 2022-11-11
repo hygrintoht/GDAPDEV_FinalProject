@@ -44,6 +44,10 @@ public class EnemyBehavior : MonoBehaviour
         {
             deathParticles.Play();
             StartCoroutine(Death());
+
+            //added the score after death
+           
+
         }
         /*if(timerDeath <= 0)
         {
@@ -127,6 +131,8 @@ public class EnemyBehavior : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         action(this);
+        GameData.Instance.UpdateScore(100); //default scoring
+        Debug.Log($"Current Tracker :");
 
     }
 }

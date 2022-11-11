@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class GameUIBehaviour : MonoBehaviour
 {
@@ -10,12 +12,24 @@ public class GameUIBehaviour : MonoBehaviour
     [SerializeField] Image healthFillBar;
     [SerializeField] GameObject progBarObj;
     [SerializeField] Image progFillBar;
+    [SerializeField] GameObject bossLabel;
+
+    [Header("UI Score Place Holder")]
+    [SerializeField] GameObject scoreSection;
+    [SerializeField] TextMeshProUGUI scoreTxt;
+    [SerializeField] TextMeshProUGUI multiplierTxt;
+    [SerializeField] TextMeshProUGUI totalEarningTxt;
 
     [Header("GameData")]
     [SerializeField] private ShipControls shipInfo;
     [SerializeField] private float timer = 10.0f;
+    [SerializeField] private float score_Multiplier = 1.0f;
+
+    
+
 
     private float currentTime = 0;
+    private bool hasDataUploaded = false;
     
     //EnemyBehavior
 
@@ -45,6 +59,9 @@ public class GameUIBehaviour : MonoBehaviour
     void Update()
     {
         UpdateBar();
+
+        ScoreUpdate();
+
         currentTime = currentTime + Time.deltaTime;
 
     }
@@ -88,11 +105,45 @@ public class GameUIBehaviour : MonoBehaviour
         //For Progress
         float progressRatio = currentTime / timer;
         
+        if(progressRatio > .95f)
+        {
+            progFillBar.color = bossColor;
+            bossLabel.SetActive(true);
 
+            if((timer + 5.0f) < currentTime)
+            {
+                progBarObj.SetActive(false);
+                //play audio if needed
+            }
+        }
         progBar.value = progressRatio;
     }
 
-    
+    public void ScoreUpdate()
+    {
+        if (shipInfo.HP <= 0)
+        {
+            scoreSection.SetActive(true);
+            Time.timeScale = 0;
+
+            int scores = GameData.Instance.RetrieveScore();
+
+            //Text Description
+            scoreTxt.text = $"Total Score: {scores.ToString()} ";
+            multiplierTxt.text = $"Score Multiplier: {score_Multiplier.ToString()} X";
+            totalEarningTxt.text = $"Currency Earned: {scores * score_Multiplier} ";
+
+            if (!hasDataUploaded)
+            {
+                float earnings = scores * score_Multiplier;
+                GameData.Instance.UpdateCurrency((int)earnings);
+                hasDataUploaded = true;
+            }
+
+        }
+
+
+    }
 
     
 

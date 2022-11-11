@@ -54,6 +54,12 @@ public class GameUIEvents : MonoBehaviour
 
     }
 
+    public void onPressQuit()
+    {
+        Time.timeScale = 1.0f;
+        Application.Quit();
+    }
+
     //===== Settings Panel ======//
     public void selectConfigTab()
     {

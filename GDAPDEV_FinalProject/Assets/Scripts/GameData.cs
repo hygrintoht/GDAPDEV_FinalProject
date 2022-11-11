@@ -24,7 +24,7 @@ public class GameData: MonoBehaviour
    
 
     //Other useful Data
-    // private int score = 0;
+    private int score = 0;
     // private int highScore = 0;
     private int totalCurrency = 2000;
 
@@ -125,6 +125,16 @@ public class GameData: MonoBehaviour
     {
         totalCurrency += increments;
         StoreAll();
+    }
+
+    public void UpdateScore(int Score)
+    {
+        score += Score;
+    }
+
+    public int RetrieveScore()
+    {
+        return score;
     }
 
     public void ResetData()
