@@ -32,7 +32,8 @@ public class EventNames {
 	{
 		public const string ROLL_CW = "Right";
 		public const string ROLL_CCW = "Left";
-	}
+        public const string SHIELD_TOGGLE = "Shield";
+    }
 
 
 }
