@@ -1362,10 +1362,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 83152832, guid: 1bfdf451609d9834d947ba00f2fe0aec, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 83152833, guid: 1bfdf451609d9834d947ba00f2fe0aec, type: 3}
       propertyPath: shipAnimator
       value: 
