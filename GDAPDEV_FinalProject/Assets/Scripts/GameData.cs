@@ -13,7 +13,6 @@ public class GameData: MonoBehaviour
     private int maxReviveTick = 1;
     private int maxDamageTick = 8;
     private int maxAttkSpdTick = 8;
-    
 
     //Player Data
     //Create List to temporary store the data as tick
@@ -27,7 +26,7 @@ public class GameData: MonoBehaviour
     //Other useful Data
     // private int score = 0;
     // private int highScore = 0;
-    private int totalCurrency = 2010;
+    private int totalCurrency = 2000;
 
     //Cheat Data
     //bool isUnliHealth
@@ -36,10 +35,13 @@ public class GameData: MonoBehaviour
 
     private void Awake()
     {
+
         if (Instance != null)
             Destroy(this);
 
+
         Instance = this;
+        LoadAll();
     }
 //public function
    public List<int> retrieveMaxData()
@@ -102,6 +104,8 @@ public class GameData: MonoBehaviour
             
         }
 
+        StoreAll();
+
     }
 
     public void printData()
@@ -119,6 +123,7 @@ public class GameData: MonoBehaviour
     public void UpdateCurrency(int increments)
     {
         totalCurrency += increments;
+        StoreAll();
     }
 
     public void ResetData()
@@ -133,9 +138,47 @@ public class GameData: MonoBehaviour
         currReviveTick = 0;
         currDamageTick = 0;
         currAttkSpdTick = 0;
+
+        StoreAll();
+    }
+
+    public void StoreAll()
+    {
+        Debug.Log("Stored Datal");
+
+        PlayerPrefs.SetInt("currHealthTick", currHealthTick);
+        PlayerPrefs.SetInt("currShieldTick", currShieldTick);
+        PlayerPrefs.SetInt("currReviveTick", currReviveTick);
+        PlayerPrefs.SetInt("currDamageTick", currDamageTick);
+        PlayerPrefs.SetInt("currAttkSpdTick", currAttkSpdTick);
+
+        //Currency Data
+        PlayerPrefs.SetInt("totalCurrency", totalCurrency);
     }
 
     //private function
+
+
+
+    private void LoadAll()
+    {
+        Debug.Log("Load All");
+        //Upgrade Data
+        currHealthTick = PlayerPrefs.GetInt("currHealthTick");
+        currShieldTick = PlayerPrefs.GetInt("currShieldTick");
+        currReviveTick = PlayerPrefs.GetInt("currReviveTick");
+        currDamageTick = PlayerPrefs.GetInt("currDamageTick");
+        currAttkSpdTick = PlayerPrefs.GetInt("currAttkSpdTick");
+
+
+        //Currency Data
+        totalCurrency = PlayerPrefs.GetInt("totalCurrency");
+
+        //Cheat Data
+        
+    }
+
+    
     
 
 }
