@@ -25,6 +25,7 @@ public class GameUIBehaviour : MonoBehaviour
     [SerializeField] private float timer = 10.0f;
     [SerializeField] private float score_Multiplier = 1.0f;
 
+    [SerializeField] GameObject boss;
 
     private float currentTime = 0;
     private bool hasDataUploaded = false;
@@ -110,7 +111,7 @@ public class GameUIBehaviour : MonoBehaviour
             SpawnerGroup.GetInstance().ChangeSpwanersActiveStatus(false);
             if (progressRatio > 1.0f)
             {
-                BossBehavior.GetInstance().gameObject.SetActive(true);
+                boss.SetActive(true);
             }
 
             if((timer + 5.0f) < currentTime)

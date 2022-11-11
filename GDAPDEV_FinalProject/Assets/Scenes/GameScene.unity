@@ -267,6 +267,11 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!1 &120239618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1736920416292693457, guid: f5738594729d84146bd34012708a9249, type: 3}
+  m_PrefabInstance: {fileID: 1736920416407344083}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &135864868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4233,6 +4238,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1740734044, guid: 8879ac1268f2f8a4c84f336df7cb0a1c, type: 3}
+      propertyPath: boss
+      value: 
+      objectReference: {fileID: 120239618}
     - target: {fileID: 1740734044, guid: 8879ac1268f2f8a4c84f336df7cb0a1c, type: 3}
       propertyPath: timer
       value: 90
