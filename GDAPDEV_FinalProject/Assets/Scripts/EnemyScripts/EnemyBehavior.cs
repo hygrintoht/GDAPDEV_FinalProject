@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBehavior : MonoBehaviour
@@ -8,21 +9,21 @@ public class EnemyBehavior : MonoBehaviour
     enum EnemyColor { red = 0, green = 1, blue = 2 };
     public enum Direction { right, left, up, down, forward, back };
 
-    [SerializeField] Multiplier atkDamage;
+    [SerializeField] public Multiplier atkDamage;
 
     [SerializeField] Material materialR;
     [SerializeField] Material materialG;
     [SerializeField] Material materialB;
     [SerializeField] Renderer enemyRend;
 
-    [SerializeField] float health = 30.0f;
+    [SerializeField] public float health = 30.0f;
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
-    [SerializeField] float bulletDamage = 5.0f;
+    [SerializeField] public float bulletDamage = 5.0f;
     [SerializeField] float moveSpeed = 5.0f;
     //[SerializeField] float timeAlive = 20.0f;
 
     [Header("Particle System with Sound")]
-    [SerializeField] private ParticleSystem deathParticles;
+    [SerializeField] public ParticleSystem deathParticles;
 
     Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
@@ -35,7 +36,7 @@ public class EnemyBehavior : MonoBehaviour
         SetEnemyParams();
     }
 
-    void Update()
+    public virtual void Update()
     {
         gameObject.transform.position = gameObject.transform.position + (moveDir * moveSpeed * Time.deltaTime);
         //timerDeath -= Time.deltaTime;
@@ -101,8 +102,13 @@ public class EnemyBehavior : MonoBehaviour
                 enemyRend.material = materialB;
                 break;
         }
-        health = 30.0f;
+        
         //timerDeath = timeAlive;
+    }
+
+    public void ResetHealth()
+    {
+        health = 30.0f;
     }
 
     public void MoveToDirection(Direction dir)
@@ -119,7 +125,7 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
-    private void InitEnemyData()
+    public virtual void InitEnemyData()
     {
         List<int> currData = new List<int>();
         currData = GameData.Instance.retrieveCurrentData();
@@ -128,7 +134,7 @@ public class EnemyBehavior : MonoBehaviour
         bulletDamage = bulletDamage + (currData [3] * atkDamage.attackMultiplier);
     }
 
-    IEnumerator Death()
+    public IEnumerator Death()
     {
         yield return new WaitForSeconds(0.1f);
         action(this);

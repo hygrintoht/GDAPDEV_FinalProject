@@ -42,6 +42,7 @@ public class SpawnerScript : MonoBehaviour
             {
                 EnemyBehavior enemy = pool.Get();
                 enemy.SetEnemyParams();
+                enemy.ResetHealth();
                 enemy.transform.position = RandomPositionInSpawner();
                 enemy.MoveToDirection(spawnerDirection);
                 enemy.Init(KillEnemy);

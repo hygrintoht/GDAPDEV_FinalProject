@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9ba201e24704049be8fc8688c5f542, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turret: {fileID: 0}
+  turret: {fileID: 5270223417317354038}
   fireCountDown: 0
 --- !u!1001 &6023921398890674268
 PrefabInstance:
@@ -317,3 +317,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4872541030422216952, guid: b16ec8b6b0884b44fbc76f7b549312b7, type: 3}
   m_PrefabInstance: {fileID: 6023921398890674268}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5270223417317354038 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1926094640652866154, guid: b16ec8b6b0884b44fbc76f7b549312b7, type: 3}
+  m_PrefabInstance: {fileID: 6023921398890674268}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3804d9683f01354c84278c5fac2488d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

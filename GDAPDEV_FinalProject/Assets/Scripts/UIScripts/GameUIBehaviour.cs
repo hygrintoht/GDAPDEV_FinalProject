@@ -24,7 +24,6 @@ public class GameUIBehaviour : MonoBehaviour
     [SerializeField] private ShipControls shipInfo;
     [SerializeField] private float timer = 10.0f;
     [SerializeField] private float score_Multiplier = 1.0f;
-
     
 
 
@@ -109,6 +108,11 @@ public class GameUIBehaviour : MonoBehaviour
         {
             progFillBar.color = bossColor;
             bossLabel.SetActive(true);
+            SpawnerGroup.GetInstance().ChangeSpwanersActiveStatus(false);
+            if (progressRatio > 1.0f)
+            {
+                BossBehavior.GetInstance().gameObject.SetActive(true);
+            }
 
             if((timer + 5.0f) < currentTime)
             {
