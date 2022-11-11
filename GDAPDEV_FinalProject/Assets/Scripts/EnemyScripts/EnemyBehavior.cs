@@ -19,14 +19,18 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] float moveSpeed = 5.0f;
     //[SerializeField] float timeAlive = 20.0f;
 
-    [Header("Particle System with Sound")]
+    [Header("Particle System")]
     [SerializeField] private ParticleSystem deathParticles;
 
     Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
     //float timerDeath;
 
-    public float Health { get { return health; } }
+    public float Health 
+    { 
+        get { return health; }
+        set { health = value; }
+    }
     void Start()
     {
         SetEnemyParams();

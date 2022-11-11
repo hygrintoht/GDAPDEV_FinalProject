@@ -21,7 +21,9 @@ public class SpawnerScript : MonoBehaviour
     {
         pool = new ObjectPool<EnemyBehavior>(
             () => { return Instantiate(enemyPrefab); },
-            enemy => { enemy.gameObject.SetActive(true); },
+            enemy => { enemy.gameObject.SetActive(true);
+                       enemy.GetComponent<EnemyBehavior>().Health = 30.0f;
+            },
             enemy => { enemy.gameObject.SetActive(false); },
             enemy => { Destroy(enemy.gameObject); },
             false,
