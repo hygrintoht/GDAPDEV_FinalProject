@@ -21,13 +21,13 @@ public class ShipControls : MonoBehaviour
     Vector3 finalDirection = Vector3.zero;
     Vector3 relPos;
 
-    [SerializeField] public int maxHP = 5;
+    [SerializeField] int maxHP = 5;
 
-    [SerializeField] public int HP;
+    [SerializeField]int HP;
 
     //turret parameters
     [SerializeField] Turret[] turrets;
-    [SerializeField] public float fireRate = 5.0f;
+    [SerializeField] public float fireRate = 10.0f;
     [SerializeField] Turret.BulletType currBulletType = Turret.BulletType.red;
 
     float fireCountdown = 0;
@@ -41,16 +41,11 @@ public class ShipControls : MonoBehaviour
 
     [SerializeField] private Animator shipAnimator;
     [SerializeField] private ParticleSystem deathExplotion;
-
     [SerializeField] private GameObject shield;
-    [SerializeField] private Multiplier multiplierData;
-
-    //Upgrade Parameters
 
     //unity events
     void Start()
     {
-        ShipInit();
         HP = maxHP;    
     }
 
@@ -104,7 +99,6 @@ public class ShipControls : MonoBehaviour
         if (HP <= 0)//if hp is lower than 1
         {
             ShipDeath();
-            //Call the UI
         }
     }
 
@@ -187,30 +181,6 @@ public class ShipControls : MonoBehaviour
 
     public void Bomb()//i think im going to scrap this unless i know how to implement this to the enemy manager
     {
-
-    }
-
-    //private Function
-    //StartUP
-
-    public void ShipInit()
-    {
-        //Look the order at the game data scripts
-
-        //Init the stats
-        List<int> currData;
-        currData = new List<int>();
-
-        currData = GameData.Instance.retrieveCurrentData();
-        fireRate = fireRate + (currData[4] * multiplierData.attackSpdMultiplier);
-        Debug.Log($"Fire rate: {fireRate}");
-        maxHP = maxHP + (currData[0] * multiplierData.healthMultiplier);
-        shieldCount = shieldCount + currData[1];
-
-        Debug.Log($"Health: {currData[4]}");
-
-        //Needed to manage
-        //Revive
 
     }
 }

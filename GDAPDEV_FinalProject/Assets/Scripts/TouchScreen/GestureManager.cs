@@ -234,12 +234,12 @@ public class GestureManager : MonoBehaviour
         RotateDirection dir;
         if(cross.z > 0)
         {
-            //Debug.Log($"Rotate CCW {angle}");
+            Debug.Log($"Rotate CCW {angle}");
             dir = RotateDirection.CCW;
         }
         else
         {
-            //Debug.Log($"Rotate CW {angle}");
+            Debug.Log($"Rotate CW {angle}");
             dir = RotateDirection.CW;
         }
         GameObject hitObj = null;

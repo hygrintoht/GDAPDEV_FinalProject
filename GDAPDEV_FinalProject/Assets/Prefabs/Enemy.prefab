@@ -112,7 +112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 338d432c5dff9174a8a1d043879c5c68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atkDamage: {fileID: 3168226804216852698, guid: 8879ac1268f2f8a4c84f336df7cb0a1c, type: 3}
   materialR: {fileID: 2100000, guid: d70d01b528b10384aa4dfb00af0b04f9, type: 2}
   materialG: {fileID: 2100000, guid: 9e98ac51ddba8834591088b1879ac129, type: 2}
   materialB: {fileID: 2100000, guid: 1480b4a0f27e6bf46adbfc79483c5f27, type: 2}

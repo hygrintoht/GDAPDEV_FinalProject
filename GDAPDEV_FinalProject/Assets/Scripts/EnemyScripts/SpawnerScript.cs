@@ -8,7 +8,7 @@ public class SpawnerScript : MonoBehaviour
     [SerializeField] EnemyBehavior enemyPrefab;
     [SerializeField] EnemyBehavior.Direction spawnerDirection;
     [SerializeField] private AudioSource deathSound;
-    /// Add timer before the boss spawn
+
     ObjectPool<EnemyBehavior> pool;
 
     bool spawnerStatus = true;
