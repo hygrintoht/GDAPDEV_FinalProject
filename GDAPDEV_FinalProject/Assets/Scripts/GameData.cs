@@ -93,14 +93,15 @@ public class GameData: MonoBehaviour
                 if (currReviveTick < maxReviveTick)
                     currReviveTick++;
                 break;
-            case 4: //damageTick
-                if (currDamageTick < maxDamageTick)
-                    currDamageTick++;
-                break;
-            case 5: //attckSpeedTick
+            case 4: //attckSpeedTick
                 if (currAttkSpdTick < maxAttkSpdTick)
                     currAttkSpdTick++;
                 break;
+            case 5: //damageTick
+                if (currDamageTick < maxDamageTick)
+                    currDamageTick++;
+                break;
+           
             
         }
 

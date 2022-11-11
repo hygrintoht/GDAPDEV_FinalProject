@@ -33,6 +33,7 @@ public class GameUIEvents : MonoBehaviour
     public void onPressMainMenu()
     {
         SceneManager.LoadScene(1); //Load to loadout scene
+        Time.timeScale = 1.0f;
     }
 
     public void onPressOption()
