@@ -129,8 +129,6 @@ public class EnemyBehavior : MonoBehaviour
     {
         List<int> currData = new List<int>();
         currData = GameData.Instance.retrieveCurrentData();
-
-        //Bullet Damage Increased
         bulletDamage = bulletDamage + (currData [3] * atkDamage.attackMultiplier);
     }
 

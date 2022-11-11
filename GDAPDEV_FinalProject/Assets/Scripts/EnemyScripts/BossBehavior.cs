@@ -24,14 +24,14 @@ public class BossBehavior : EnemyBehavior
     {
         InitializeSingleton();
         InitEnemyData();
-        SetEnemyParams();
         health = bossHealth;
         colorChangeTimer = colorChangeTime;
+        SetEnemyParams();
     }
     public override void Update()
     {
         colorChangeTimer -= Time.deltaTime;
-
+        Debug.Log(colorChangeTimer);
         if (colorChangeTimer <= 0)
         {
             SetEnemyParams();
@@ -41,18 +41,18 @@ public class BossBehavior : EnemyBehavior
         if (health <= 0)
         {
             deathParticles.Play();
-            StartCoroutine(Death());
-            Destroy(this);
+            GameData.Instance.UpdateScore(200);
+            Destroy(this);//kasi singleton
+
+            //add death code here
         }
     }
 
     public override void InitEnemyData()
     {
-        List<int> currData = new List<int>();
-        currData = GameData.Instance.retrieveCurrentData();
-        Debug.Log(currData == null);
-        //Bullet Damage Increased
-        bulletDamage = bulletDamage + (currData[3] * atkDamage.attackMultiplier);
+        Debug.Log(GameData.Instance.retrieveCurrentData() == null);
+        bulletDamage = bulletDamage + (GameData.Instance.retrieveCurrentData()[3] * atkDamage.attackMultiplier);
+        Debug.Log(bulletDamage);
     }
 
 }

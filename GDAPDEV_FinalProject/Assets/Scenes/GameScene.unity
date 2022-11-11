@@ -4213,6 +4213,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2967237730837842305, guid: f5738594729d84146bd34012708a9249, type: 3}
+      propertyPath: atkDamage
+      value: 
+      objectReference: {fileID: 1740734043}
+    - target: {fileID: 2967237730837842305, guid: f5738594729d84146bd34012708a9249, type: 3}
       propertyPath: bossHealth
       value: 300
       objectReference: {fileID: 0}
