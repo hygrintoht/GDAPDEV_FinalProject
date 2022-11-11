@@ -118,6 +118,29 @@ public class GameUIBehaviour : MonoBehaviour
             {
                 progBarObj.SetActive(false);
                 //play audio if needed
+
+                if(boss.GetComponent<BossBehavior>().health <= 0)
+                {
+                    scoreSection.SetActive(true);
+                    Time.timeScale = 0;
+
+                   
+
+                    if (!hasDataUploaded)
+                    {
+                        GameData.Instance.UpdateScore(2000);
+                        int scores = GameData.Instance.RetrieveScore();
+
+                        //Text Description
+                        scoreTxt.text = $"Total Score: {scores.ToString()} ";
+                        multiplierTxt.text = $"Score Multiplier: {score_Multiplier.ToString()} X";
+                        totalEarningTxt.text = $"Currency Earned: {scores * score_Multiplier} ";
+
+                        float earnings = scores * score_Multiplier;
+                        GameData.Instance.UpdateCurrency((int)earnings);
+                        hasDataUploaded = true;
+                    }
+                }
             }
         }
         progBar.value = progressRatio;
