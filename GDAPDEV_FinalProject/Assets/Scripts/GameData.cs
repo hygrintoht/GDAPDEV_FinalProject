@@ -24,7 +24,7 @@ public class GameData: MonoBehaviour
    
 
     //Other useful Data
-    // private int score = 0;
+    private int score = 0;
     // private int highScore = 0;
     private int totalCurrency = 2000;
 
@@ -93,14 +93,15 @@ public class GameData: MonoBehaviour
                 if (currReviveTick < maxReviveTick)
                     currReviveTick++;
                 break;
-            case 4: //damageTick
-                if (currDamageTick < maxDamageTick)
-                    currDamageTick++;
-                break;
-            case 5: //attckSpeedTick
+            case 4: //attckSpeedTick
                 if (currAttkSpdTick < maxAttkSpdTick)
                     currAttkSpdTick++;
                 break;
+            case 5: //damageTick
+                if (currDamageTick < maxDamageTick)
+                    currDamageTick++;
+                break;
+           
             
         }
 
@@ -124,6 +125,16 @@ public class GameData: MonoBehaviour
     {
         totalCurrency += increments;
         StoreAll();
+    }
+
+    public void UpdateScore(int Score)
+    {
+        score += Score;
+    }
+
+    public int RetrieveScore()
+    {
+        return score;
     }
 
     public void ResetData()

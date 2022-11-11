@@ -8,6 +8,8 @@ public class EnemyBehavior : MonoBehaviour
     enum EnemyColor { red = 0, green = 1, blue = 2 };
     public enum Direction { right, left, up, down, forward, back };
 
+    [SerializeField] Multiplier atkDamage;
+
     [SerializeField] Material materialR;
     [SerializeField] Material materialG;
     [SerializeField] Material materialB;
@@ -29,6 +31,7 @@ public class EnemyBehavior : MonoBehaviour
     public float Health { get { return health; } }
     void Start()
     {
+        InitEnemyData();
         SetEnemyParams();
     }
 
@@ -41,6 +44,10 @@ public class EnemyBehavior : MonoBehaviour
         {
             deathParticles.Play();
             StartCoroutine(Death());
+
+            //added the score after death
+           
+
         }
         /*if(timerDeath <= 0)
         {
@@ -111,10 +118,21 @@ public class EnemyBehavior : MonoBehaviour
 
     }
 
+    private void InitEnemyData()
+    {
+        List<int> currData = new List<int>();
+        currData = GameData.Instance.retrieveCurrentData();
+
+        //Bullet Damage Increased
+        bulletDamage = bulletDamage + (currData [3] * atkDamage.attackMultiplier);
+    }
+
     IEnumerator Death()
     {
         yield return new WaitForSeconds(0.1f);
         action(this);
+        GameData.Instance.UpdateScore(100); //default scoring
+        Debug.Log($"Current Tracker :");
 
     }
 }

@@ -26,7 +26,7 @@ public class RandTurret : MonoBehaviour
         if(fireCountDown <= 0)
         {
             result = RandomPositionInShootArea();
-            Debug.Log($"{result}");
+            //Debug.Log($"{result}");
             transform.LookAt(result);
             turret.Shoot(Turret.BulletType.none);
             fireCountDown = Random.Range(3.0f, 7.5f);
