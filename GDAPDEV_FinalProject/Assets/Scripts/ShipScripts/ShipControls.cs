@@ -38,7 +38,8 @@ public class ShipControls : MonoBehaviour
     [SerializeField] float shieldDuration = 3.0f;
 
     float shieldTimer = 0;
-
+    [SerializeField] private Animator shipAnimator;
+    [SerializeField] private GameObject shield;
     [SerializeField] private ParticleSystem deathExplotion;
     [SerializeField] private Multiplier multiplierData;
 
@@ -86,6 +87,10 @@ public class ShipControls : MonoBehaviour
         if (shieldTimer > 0)
         {
             shieldTimer -= Time.deltaTime;
+        }
+        if (shieldTimer <= 0 && shield.activeSelf)
+        {
+            shield.SetActive(false);
         }
 
     }
@@ -140,19 +145,29 @@ public class ShipControls : MonoBehaviour
     {
         Vector3 target;
         float rollDistance = 2.5f;
-        if (direction) target = gameObject.transform.position + (Vector3.right * rollDistance);
-        else target = gameObject.transform.position + (Vector3.left * rollDistance);
+        string dir;
+        if (direction)
+        {
+            target = gameObject.transform.position + (Vector3.right * rollDistance);
+            dir = EventNames.AnimationTrigger.ROLL_CCW;
+        }
+        else
+        {
+            target = gameObject.transform.position + (Vector3.left * rollDistance);
+            dir = EventNames.AnimationTrigger.ROLL_CW;
+        }
 
-        StartCoroutine(DodgeRolling(gameObject.transform.position, target));
+        StartCoroutine(DodgeRolling(gameObject.transform.position, target, dir));
     }
 
-    IEnumerator DodgeRolling(Vector3 start, Vector3 target)
+    IEnumerator DodgeRolling(Vector3 start, Vector3 target, string animate)
     {
         float rollTimer = 0;
         float rollDuration = .35f;
-        while(rollTimer < rollDuration)
+        while (rollTimer < rollDuration)
         {
-            gameObject.transform.position = Vector3.Lerp(start, target, rollTimer/rollDuration);
+            gameObject.transform.position = Vector3.Lerp(start, target, rollTimer / rollDuration);
+            shipAnimator.SetTrigger(animate);
             rollTimer += Time.deltaTime;
             yield return null;
         }
@@ -165,6 +180,7 @@ public class ShipControls : MonoBehaviour
         {
             shieldCount--;
             shieldTimer = shieldDuration;
+            shield.SetActive(true);
         }
     }
 
