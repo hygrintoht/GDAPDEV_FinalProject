@@ -41,6 +41,7 @@ public class ShipControls : MonoBehaviour
 
     [SerializeField] private Animator shipAnimator;
     [SerializeField] private ParticleSystem deathExplotion;
+    [SerializeField] private GameObject shield;
 
     //unity events
     void Start()
@@ -81,6 +82,10 @@ public class ShipControls : MonoBehaviour
         if (shieldTimer > 0)
         {
             shieldTimer -= Time.deltaTime;
+        }
+        if (shieldTimer <= 0 && shield.activeSelf)
+        {
+            shield.SetActive(false);
         }
 
     }
@@ -169,6 +174,8 @@ public class ShipControls : MonoBehaviour
         {
             shieldCount--;
             shieldTimer = shieldDuration;
+            shield.SetActive(true);
+            //shipAnimator.SetBool(EventNames.AnimationTrigger.SHIELD_TOGGLE, true);
         }
     }
 
