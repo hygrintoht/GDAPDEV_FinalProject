@@ -28,6 +28,14 @@ public class EventNames {
 		public const string ON_PRESS_QUIT = "ON_PRESS_QUIT";
 	}
 
+    public class AnimationTrigger
+    {
+        public const string ROLL_CW = "Right";
+        public const string ROLL_CCW = "Left";
+        public const string SHIELD_TOGGLE = "Shield";
+    }
+
+
 
 }
 

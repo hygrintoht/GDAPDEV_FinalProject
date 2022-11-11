@@ -24,7 +24,6 @@ public class GameUIBehaviour : MonoBehaviour
     [SerializeField] private ShipControls shipInfo;
     [SerializeField] private float timer = 10.0f;
     [SerializeField] private float score_Multiplier = 1.0f;
-    
 
 
     private float currentTime = 0;
