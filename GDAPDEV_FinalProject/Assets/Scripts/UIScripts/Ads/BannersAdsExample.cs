@@ -68,8 +68,9 @@ public class BannersAdsExample : MonoBehaviour
 
         };
 
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+        
         Advertisement.Banner.Show(_adUnitId, options);
+        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_RIGHT);
     }
 
     void OnBannerClicked() { }

@@ -44,6 +44,11 @@ public class UIEvents : MonoBehaviour
     Color emptyUpColor;
     Color filledUpColor;
 
+
+    //[Header("Confirm Tab Holder")]
+    //[SerializeField] GameObject confirmSection_1; //Confirm Tab: For Adding Currency
+
+
     private void Awake()
     {
         //Update the Current Status of each part

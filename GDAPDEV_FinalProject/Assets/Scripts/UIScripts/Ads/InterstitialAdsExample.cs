@@ -48,6 +48,7 @@ public class InterstitialAdsExample : MonoBehaviour, IUnityAdsLoadListener, IUni
     {
         //Important! Only load when the Advertisements class has been initialized. Otherwise, loading an Ad will result to an error.
         Debug.Log("Loading ad:" + _adUnitID);
+        Advertisement.Load(_adUnitID, this);
     }
 
     public void ShowAd()
