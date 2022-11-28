@@ -22,6 +22,7 @@ public class BannersAdsExample : MonoBehaviour
             ? _iOsAdUnitId
             : _androidAdUnitId;
 
+        
     }
 
     // Update is called once per frame
@@ -43,6 +44,8 @@ public class BannersAdsExample : MonoBehaviour
             loadCallback = OnBannerLoad,
             errorCallback = OnBannerError
         };
+
+        Advertisement.Banner.Load(_adUnitId, options);
     }
 
     void OnBannerLoad()
@@ -68,9 +71,11 @@ public class BannersAdsExample : MonoBehaviour
 
         };
 
-        
+        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER); 
         Advertisement.Banner.Show(_adUnitId, options);
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_RIGHT);
+        OnBannerLoad();
+
+
     }
 
     void OnBannerClicked() { }
