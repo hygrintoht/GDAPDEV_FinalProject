@@ -36,8 +36,8 @@ public class WebAPI : MonoBehaviour
     IEnumerator LoadAll()
     {
         yield return StartCoroutine(SamplePlayersScoreRequest(101));
-        //yield return StartCoroutine(SamplePlayersScoreRequest(102));
-        //yield return StartCoroutine(SamplePlayersScoreRequest(103));
+        yield return StartCoroutine(SamplePlayersScoreRequest(102));
+        yield return StartCoroutine(SamplePlayersScoreRequest(103));
 
     }
 
@@ -61,17 +61,17 @@ public class WebAPI : MonoBehaviour
     //Debug for single push
     public void Debug_SendPlayerData_L01()
     {
-        StartCoroutine(SendScorePostRequest(101, "DebugPlayer", 0));
+        StartCoroutine(SendScorePostRequest(101, "DebugPlayer_01", 0));
     }
 
     public void Debug_SendPlayerData_L02()
     {
-        StartCoroutine(SendScorePostRequest(102, "DebugPlayer", 0));
+        StartCoroutine(SendScorePostRequest(102, "DebugPlayer_02", 0));
     }
 
     public void Debug_SendPlayerData_L03()
     {
-        StartCoroutine(SendScorePostRequest(103, "DebugPlayer", 0));
+        StartCoroutine(SendScorePostRequest(103, "DebugPlayer_03", 0));
     }
 
 
@@ -185,7 +185,7 @@ public class WebAPI : MonoBehaviour
 
                 foreach (Dictionary<string, dynamic> player in playerList)
                 {
-                    Debug.Log($"Got Player: {player["user_name"]}");
+                    //Debug.Log($"Got Player: {player["user_name"]}");
                     //player
                 }
 
