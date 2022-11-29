@@ -28,7 +28,7 @@ public class AdsManager : MonoBehaviour, IUnityAdsInitializationListener
             _iosGameID : _androidGameID; 
 
         Advertisement.Initialize(_gameID, _testMode, this);
-        Debug.Log("Initializing ads system: " + _gameID);
+        //Debug.Log("Initializing ads system: " + _gameID);
     }
 
     public void OnInitializationComplete()

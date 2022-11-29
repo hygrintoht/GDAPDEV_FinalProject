@@ -27,6 +27,7 @@ public class UIEventsExtra : MonoBehaviour
     [Header("Info Holder")]
     [SerializeField] private WebAPI referenceWebAPI;
     [SerializeField] private GameObject prefabData;
+    [SerializeField] private int counter = 0;
 
 
     private List<GameObject> Level_1DataPanelList;
@@ -53,7 +54,8 @@ public class UIEventsExtra : MonoBehaviour
         activeLeaderTab.SetActive(true);
 
         //Call the JSON File for leaderboard things
-        StartCoroutine(initData());
+        //StartCoroutine(initData());
+        //testSpawn();
 
     }
 
@@ -97,58 +99,91 @@ public class UIEventsExtra : MonoBehaviour
     }
 
 
-    /*Transfering Data Section*/
-    IEnumerator initData()
+    //Debug Purpose
+    public void testSpawn()
     {
 
-        //yield return StartCoroutine(loadAllLeaderboard());
+        for (counter = 1; counter < 10; counter++)
+        {
+
+            GameObject leaderGameData = GameObject.Instantiate(prefabData);
+            leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
+
+            leaderGameData.GetComponent<LeaderboardData>().setData(counter, "sample", 0);
+            //Level_1DataPanelList.Add(leaderGameData);
+
+            Debug.Log($"Counter: {counter}");
+        }
+
+    }
+
+
+    /*Transfering Data Section*/
+    public void initData()
+    {
+        //init Game Object
+        Level_1DataPanelList = new List<GameObject>();
+        Level_2DataPanelList = new List<GameObject>();
+        Level_3DataPanelList = new List<GameObject>();
+
         //Load All Data
-        Level_1DataList = referenceWebAPI.returnLevel1_SetScores();
-        Level_2DataList = referenceWebAPI.returnLevel2_SetScores();
-        Level_3DataList = referenceWebAPI.returnLevel3_SetScores();
+        Level_1DataList = new List<Dictionary<string, dynamic>>();
+        Level_2DataList = new List<Dictionary<string, dynamic>>();
+        Level_3DataList = new List<Dictionary<string, dynamic>>();
+
+
+
+
+        //Load All Data
+        Level_1DataList = referenceWebAPI.ReturnLevel1_SetScores();
+        //Level_2DataList = referenceWebAPI.returnLevel2_SetScores();
+        //Level_3DataList = referenceWebAPI.returnLevel3_SetScores();
 
         //Create a prefab for everysingle one
 
-        int counter = 0;
+        //int counter = 0;
 
+        //Debug.Log($"DataList Count: {Level_1DataList.Count}");
 
         //Level 1
-        for (int i = 0; i < Level_1DataList.Count; i++)
-        {
-            Dictionary<string, dynamic> leaderData = Level_1DataList[i];
-            //if (leaderData != null)
-            //{
-            //    Debug.Log("Not Empty");
-            //}
+        InsertList(Level_1DataHolder, Level_1DataPanelList, Level_1DataList);
 
-            //Data Parsing
-            counter++;
-            string Name = leaderData["user_name"] as string;
-            int score = leaderData["score"];
+        //for (int i = 0; i <= Level_1DataList.Count; i++)
+        ////foreach (Dictionary<string, dynamic> leaderData in Level_1DataList)
+        //{
+        //    //(Dictionary<string, dynamic> leaderData in Level_1DataList)
+        //    Dictionary<string, dynamic> leaderData = Level_1DataList[i];
 
-            
-            //Prefab Handling
-            GameObject leaderGameData = GameObject.Instantiate(prefabData);
-            leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
 
-            leaderGameData.GetComponent<LeaderboardData>().setData(counter, null, score);
-            Level_1DataPanelList.Add(leaderGameData);
+        //    //Data Parsing
+        //    counter++;
+        //    string Name = leaderData["user_name"];
+        //    int score = (int)leaderData["score"];
 
-            Debug.Log(i);
 
-        }
+        //    //Prefab Handling
+        //    GameObject leaderGameData = GameObject.Instantiate(prefabData);
+        //    leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
 
-        while (counter < 10)
-        {
-            counter++;
-            GameObject leaderGameData = GameObject.Instantiate(prefabData);
-            leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
+        //    leaderGameData.GetComponent<LeaderboardData>().setData(counter, Name, score);
+        //    Level_1DataPanelList.Add(leaderGameData);
 
-            leaderGameData.GetComponent<LeaderboardData>().setData(counter, null, 0);
-            Level_1DataPanelList.Add(leaderGameData);
-        }
+        //    Debug.Log(counter);
+        //}
 
-        counter = 0;
+        //while (counter <= 10)
+        //{
+        //    counter++;
+        //    GameObject leaderGameData = GameObject.Instantiate(prefabData);
+        //    leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
+
+        //    leaderGameData.GetComponent<LeaderboardData>().setData(counter, "Filler", 0);
+        //    Level_1DataPanelList.Add(leaderGameData);
+
+        //    Debug.Log(counter);
+        //}
+
+        //counter = 0;
 
         ////Level 2
         //foreach (Dictionary<string, dynamic> leaderData in Level_2DataList)
@@ -209,27 +244,114 @@ public class UIEventsExtra : MonoBehaviour
 
         //counter = 0;
 
-        yield return null;
+        //yield return null;
     }
 
 
-    IEnumerator loadAllLeaderboard()
+    public void ResetAllData()
     {
-        //Load All Data
-        Level_1DataList = referenceWebAPI.returnLevel1_SetScores();
-        if(Level_1DataList == null)
+        //Delete them manually per level Data
+
+        //Level1
+        Level_1DataList.Clear();
+        foreach (GameObject gameData in Level_1DataPanelList)
         {
-            Debug.Log("Empty");
+            GameObject.Destroy(gameData);
+        }
+        Level_1DataPanelList.Clear();
+
+
+        ////Level2
+        //Level_2DataList.Clear();
+        //foreach (GameObject gameData in Level_2DataPanelList)
+        //{
+        //    GameObject.Destroy(gameData);
+        //}
+        //Level_2DataPanelList.Clear();
+
+        ////Level3
+
+
+        //Level_3DataList.Clear();
+        //foreach (GameObject gameData in Level_3DataPanelList)
+        //{
+        //    GameObject.Destroy(gameData);
+        //}
+        //Level_3DataPanelList.Clear();
+
+    }
+
+
+    //Dynamic Calling
+    public void InsertList(GameObject PanelLocList, List<GameObject> Level_DataPanelList,  List<Dictionary<string, dynamic>> scoreList)
+    {
+        //Optional: create an if statement if have wifi
+
+        //Determine if null the data or no items
+        if(scoreList.Count == 0 || scoreList == null)
+        {
+            Debug.Log("Eempty Data || Check your internet Connection");
         }
 
+        else
+        {
+            counter = 0;
 
-        //Level_2DataList = referenceWebAPI.returnLevel2_SetScores();
-        //Level_3DataList = referenceWebAPI.returnLevel3_SetScores();
+            Debug.Log($"Count {scoreList.Count}");
+            for (int i = 0; i < scoreList.Count; i++)
+            //foreach (Dictionary<string, dynamic> leaderData in Level_1DataList)
+            {
+                //(Dictionary<string, dynamic> leaderData in Level_1DataList)
+                Dictionary<string, dynamic> leaderData = Level_1DataList[i];
 
-        //Rest Time
-        yield return new WaitForSeconds(5.0f);
+
+                //Data Parsing
+                counter++;
+                string Name = leaderData["user_name"];
+                int score = (int)leaderData["score"];
+
+
+                //Prefab Handling
+                GameObject leaderGameData = GameObject.Instantiate(prefabData);
+                leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
+
+                leaderGameData.GetComponent<LeaderboardData>().setData(counter, Name, score);
+                Level_DataPanelList.Add(leaderGameData);
+
+                Debug.Log(counter);
+            }
+
+            //Contingency Plan if list has less than 10 items
+            while (counter < 10)
+            {
+                counter++;
+                GameObject leaderGameData = GameObject.Instantiate(prefabData);
+                leaderGameData.transform.SetParent(Level_1DataHolder.transform, false);
+
+                leaderGameData.GetComponent<LeaderboardData>().setData(counter, "Filler", 0);
+                Level_DataPanelList.Add(leaderGameData);
+
+                Debug.Log(counter);
+            }
+        }
 
     }
 
+
+
+    //No Wifi Info
+    private void NoInternetIndicator (GameObject PanelLocList){
+        while (counter <= 10)
+        {
+            counter++;
+            GameObject leaderGameData = GameObject.Instantiate(prefabData);
+            leaderGameData.transform.SetParent(PanelLocList.transform, false);
+
+            leaderGameData.GetComponent<LeaderboardData>().setData(0, "NO INTERNET TRY AGAIN LATER", 0);
+            
+
+            Debug.Log(counter);
+        }
+    }
 
 }

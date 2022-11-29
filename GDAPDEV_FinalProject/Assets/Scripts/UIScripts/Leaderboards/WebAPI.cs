@@ -17,22 +17,70 @@ public class WebAPI : MonoBehaviour
     private List<Dictionary<string, dynamic>> Level_3DataList;
 
 
-    public List<Dictionary<string, dynamic>> returnLevel1_SetScores()
+    private void Start()
     {
-        StartCoroutine(SamplePlayersScoreRequest(101));
+        Level_1DataList = new List<Dictionary<string, dynamic>>();
+        Level_2DataList = new List<Dictionary<string, dynamic>>();
+        Level_3DataList = new List<Dictionary<string, dynamic>>();
+
+        LoadDataAll();
+    }
+
+    //Data Loading
+
+    public void LoadDataAll()
+    {
+        StartCoroutine(LoadAll());
+    }
+
+    IEnumerator LoadAll()
+    {
+        yield return StartCoroutine(SamplePlayersScoreRequest(101));
+        //yield return StartCoroutine(SamplePlayersScoreRequest(102));
+        //yield return StartCoroutine(SamplePlayersScoreRequest(103));
+
+    }
+
+
+    public List<Dictionary<string, dynamic>> ReturnLevel1_SetScores()
+    {
         return Level_1DataList;
     }
 
-    public List<Dictionary<string, dynamic>> returnLevel2_SetScores()
+    public List<Dictionary<string, dynamic>> ReturnLevel2_SetScores()
     {
-        StartCoroutine(SamplePlayersScoreRequest(102));
         return Level_2DataList;
     }
 
-    public List<Dictionary<string, dynamic>> returnLevel3_SetScores()
+    public List<Dictionary<string, dynamic>> ReturnLevel3_SetScores()
     {
-        StartCoroutine(SamplePlayersScoreRequest(103));
         return Level_3DataList;
+    }
+
+
+    //Debug for single push
+    public void Debug_SendPlayerData_L01()
+    {
+        StartCoroutine(SendScorePostRequest(101, "DebugPlayer", 0));
+    }
+
+    public void Debug_SendPlayerData_L02()
+    {
+        StartCoroutine(SendScorePostRequest(102, "DebugPlayer", 0));
+    }
+
+    public void Debug_SendPlayerData_L03()
+    {
+        StartCoroutine(SendScorePostRequest(103, "DebugPlayer", 0));
+    }
+
+
+    //Reset Debug
+    public void ResetAllScoreAPI()
+    {
+        StartCoroutine(ResetPlayerScoreRequest(101, "01"));
+        StartCoroutine(ResetPlayerScoreRequest(102, "02"));
+        StartCoroutine(ResetPlayerScoreRequest(103, "03"));
     }
 
 
@@ -42,7 +90,7 @@ public class WebAPI : MonoBehaviour
 
     public void SendScore(int number, string Name, int score) //add arguments later (number, Name, score)
     {
-        //StartCoroutine(SendScorePostRequest(101, ));
+        StartCoroutine(SendScorePostRequest(number, Name, score));
     }
 
     IEnumerator SendScorePostRequest(int number, string Name, int score)
@@ -115,7 +163,7 @@ public class WebAPI : MonoBehaviour
             //Check if have errors;
             if (string.IsNullOrEmpty(request.error))
             {
-                Debug.Log($"Message: {request.downloadHandler.text}");
+                //Debug.Log($"Message: {request.downloadHandler.text}");
                 List<Dictionary<string, dynamic>> playerList = JsonConvert.
                    DeserializeObject<List<Dictionary<string, dynamic>>>(request.downloadHandler.text);
 
@@ -124,7 +172,6 @@ public class WebAPI : MonoBehaviour
                 {
                     case 101:
                         Level_1DataList = playerList;
-                        
                         break;
                     case 102:
                         Level_2DataList = playerList;
@@ -133,15 +180,14 @@ public class WebAPI : MonoBehaviour
                         Level_3DataList = playerList;
                         break;
 
-                    default:
-                        Debug.LogError("Group Number Inaapropriate");
-                        break;
+                    
                 }
 
-                //foreach (Dictionary<string, dynamic> player in playerList)
-                //{
-                //    Debug.Log($"Got Player: {player["user_name"]}");
-                //}
+                foreach (Dictionary<string, dynamic> player in playerList)
+                {
+                    Debug.Log($"Got Player: {player["user_name"]}");
+                    //player
+                }
 
 
             }   
