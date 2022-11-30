@@ -57,7 +57,7 @@ public class GameData: MonoBehaviour
         maxData.Add(maxAttkSpdTick);
         
 
-        Debug.Log($"Count: {maxData[0]}");
+        //Debug.Log($"Count: {maxData[0]}");
 
         return maxData;
     }
