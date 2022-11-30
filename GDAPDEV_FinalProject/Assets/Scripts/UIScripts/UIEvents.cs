@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -11,6 +12,7 @@ public class UIEvents : MonoBehaviour
     [SerializeField] Image playTab;
     [SerializeField] Image loadoutTab;
     [SerializeField] Image configTab;
+    [SerializeField] Image leaderTab;
     [SerializeField] TextMeshProUGUI currencyTxt;
 
     private Image activeTab;
@@ -21,7 +23,7 @@ public class UIEvents : MonoBehaviour
     [SerializeField] GameObject playSection;
     [SerializeField] GameObject loadoutSection;
     [SerializeField] GameObject configSection;
-    // [SerializeField] GameObject leaderTab //Enable it Later
+    [SerializeField] GameObject leaderSection;
 
     private GameObject currActiveSection;
     //Color for Tab
@@ -44,10 +46,14 @@ public class UIEvents : MonoBehaviour
     Color emptyUpColor;
     Color filledUpColor;
 
+
+    //[Header("Confirm Tab Holder")]
+    //[SerializeField] GameObject confirmSection_1; //Confirm Tab: For Adding Currency
+
+
     private void Awake()
     {
-        //Update the Current Status of each part
-        
+        //Update the Current Status of each part   
     }
 
     // Start is called before the first frame update
@@ -125,6 +131,19 @@ public class UIEvents : MonoBehaviour
         activeTab.color = tabOrigColor;
         configTab.color = pressColor;
         activeTab = configTab;
+    }
+
+    public void OnPressLeaderBoardTab()
+    {
+        //activate the tab and deactivate the other tab
+        currActiveSection.SetActive(false);
+        leaderSection.SetActive(true);
+        currActiveSection = leaderSection;
+
+        //Color Handling
+        activeTab.color = tabOrigColor;
+        leaderTab.color = pressColor;
+        activeTab = leaderTab;
     }
 
     // ===== Level Selector Tab ====== //

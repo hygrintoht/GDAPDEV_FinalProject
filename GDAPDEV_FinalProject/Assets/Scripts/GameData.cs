@@ -57,7 +57,7 @@ public class GameData: MonoBehaviour
         maxData.Add(maxAttkSpdTick);
         
 
-        Debug.Log($"Count: {maxData[0]}");
+        //Debug.Log($"Count: {maxData[0]}");
 
         return maxData;
     }
@@ -155,7 +155,7 @@ public class GameData: MonoBehaviour
 
     public void StoreAll()
     {
-        Debug.Log("Stored Datal");
+        //Debug.Log("Stored Datal");
 
         PlayerPrefs.SetInt("currHealthTick", currHealthTick);
         PlayerPrefs.SetInt("currShieldTick", currShieldTick);
@@ -173,7 +173,7 @@ public class GameData: MonoBehaviour
 
     private void LoadAll()
     {
-        Debug.Log("Load All");
+        //Debug.Log("Load All");
         //Upgrade Data
         currHealthTick = PlayerPrefs.GetInt("currHealthTick");
         currShieldTick = PlayerPrefs.GetInt("currShieldTick");
