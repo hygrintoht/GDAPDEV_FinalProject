@@ -8,6 +8,8 @@ public class SpawnerScript : MonoBehaviour
     [SerializeField] EnemyBehavior enemyPrefab;
     [SerializeField] EnemyBehavior.Direction spawnerDirection;
     [SerializeField] private AudioSource deathSound;
+    [SerializeField] float minSpawnTime = 5.0f;
+    [SerializeField] float maxSpawnTime = 15.0f;
     /// Add timer before the boss spawn
     ObjectPool<EnemyBehavior> pool;
 
@@ -29,7 +31,7 @@ public class SpawnerScript : MonoBehaviour
             30
             );
 
-        spawnTimer = Random.Range(5.0f, 15.0f);
+        spawnTimer = Random.Range(minSpawnTime, maxSpawnTime);
         center = gameObject.transform.position;
         size = gameObject.transform.localScale;
     }
@@ -46,7 +48,7 @@ public class SpawnerScript : MonoBehaviour
                 enemy.transform.position = RandomPositionInSpawner();
                 enemy.MoveToDirection(spawnerDirection);
                 enemy.Init(KillEnemy);
-                spawnTimer = Random.Range(5.0f, 15.0f);
+                spawnTimer = Random.Range(minSpawnTime, maxSpawnTime);
             }
         }
     }

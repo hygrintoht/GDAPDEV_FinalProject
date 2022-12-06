@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2874282804226466174}
   - component: {fileID: 2874282804226466161}
   - component: {fileID: 2874282804226466160}
+  - component: {fileID: 314118232}
   m_Layer: 0
   m_Name: GroundPlane
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1480b4a0f27e6bf46adbfc79483c5f27, type: 2}
+  - {fileID: 2100000, guid: f1e29f8ecb6682f4e9dbb8c24c62a3c7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -98,3 +99,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &314118232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2874282804226466162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d110f63c9c8f51143b79662adb5c2c32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rend: {fileID: 2874282804226466161}
+  scrollX: 0
+  scrollY: -0.1
