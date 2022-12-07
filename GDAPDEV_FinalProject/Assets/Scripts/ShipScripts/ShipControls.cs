@@ -84,7 +84,7 @@ public class ShipControls : MonoBehaviour
         }
 
         //shield timer update
-        if (shieldTimer > 0)
+        if (shieldTimer > 0 && !isFireing)
         {
             shieldTimer -= Time.deltaTime;
         }
@@ -95,7 +95,7 @@ public class ShipControls : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter()
     {
         if (shieldTimer <= 0)//if sheild timer is not counting down
         {
