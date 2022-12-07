@@ -39,6 +39,8 @@ public class UIEvents : MonoBehaviour
     [SerializeField] private GameObject upgrade_4DataPanel;
     [SerializeField] private GameObject upgrade_5DataPanel;
 
+    [SerializeField] UpgradeEvent upgradeData;
+
     private List<GameObject> panelHolder;
     private List<GameObject> barHolder;
 
@@ -164,73 +166,43 @@ public class UIEvents : MonoBehaviour
     }
 
     // === Upgrade Button Presses === //
+
+    public void UpdateUpgradeStatus()
+    {
+        ResetBar();
+        InitUpgrade();
+        UpdateCurrency();
+    }
+
     public void OnUpgrade_1()
     {
-        //if Success
-        if (currencyAvail > 1000)
-        {
-
-
-            ResetBar();
-            GameData.Instance.IncrementData(1);
-            InitUpgrade();
-
-            GameData.Instance.UpdateCurrency(-1000);
-            UpdateCurrency();
-        }
-
+        upgradeData.UpdateUpgradeData(1, 1000);
+        upgradeData.gameObject.SetActive(true);
+        
     }
 
     public void OnUpgrade_2()
     {
-        if (currencyAvail > 1000)
-        {
-            ResetBar();
-            GameData.Instance.IncrementData(2);
-            InitUpgrade();
-
-            GameData.Instance.UpdateCurrency(-1000);
-            UpdateCurrency();
-        }
+        upgradeData.UpdateUpgradeData(2, 1000);
+        upgradeData.gameObject.SetActive(true);
     }
 
     public void OnUpgrade_3()
     {
-        if (currencyAvail > 1000)
-        {
-            ResetBar();
-            GameData.Instance.IncrementData(3);
-            InitUpgrade();
-
-            GameData.Instance.UpdateCurrency(-1000);
-            UpdateCurrency();
-        }
+        upgradeData.UpdateUpgradeData(3, 1000);
+        upgradeData.gameObject.SetActive(true);
     }
 
     public void OnUpgrade_4()
     {
-        if (currencyAvail > 1000)
-        {
-            ResetBar();
-            GameData.Instance.IncrementData(4);
-            InitUpgrade();
-
-            GameData.Instance.UpdateCurrency(-1000);
-            UpdateCurrency();
-        }
+        upgradeData.UpdateUpgradeData(4, 1000);
+        upgradeData.gameObject.SetActive(true);
     }
 
     public void OnUpgrade_5()
     {
-        if (currencyAvail > 1000)
-        {
-            ResetBar();
-            GameData.Instance.IncrementData(5);
-            InitUpgrade();
-
-            GameData.Instance.UpdateCurrency(-1000);
-            UpdateCurrency();
-        }
+        upgradeData.UpdateUpgradeData(5, 1000);
+        upgradeData.gameObject.SetActive(true);
     }
 
     // === Config Settings Parameters == //
