@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnviromentObject : MonoBehaviour
 {
-    Action<EnviromentObject> action;
+    public Action<EnviromentObject> action;
 
     public virtual void Update()
     {

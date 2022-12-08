@@ -17,6 +17,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] Renderer enemyRend;
 
     [SerializeField] public float health = 30.0f;
+    [SerializeField] public GameObject turret;
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
     [SerializeField] public float bulletDamage = 5.0f;
     [SerializeField] float moveSpeed = 5.0f;
@@ -54,6 +55,10 @@ public class EnemyBehavior : MonoBehaviour
         {
             action(this);
         }*/
+        if (transform.position.z < 0)
+        {
+            turret.SetActive(false);
+        }
         if (transform.position.z > 75 || transform.position.z < -10 || transform.position.y > 30 || transform.position.y < -15 || transform.position.x > 60 || transform.position.x < -60)
         {
             action(this);
