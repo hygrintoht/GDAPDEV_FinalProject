@@ -11,11 +11,11 @@ public class EnemyBehavior : MonoBehaviour
 
     [SerializeField] public Multiplier atkDamage;
 
-    [SerializeField] Material materialR;
-    [SerializeField] Material materialG;
-    [SerializeField] Material materialB;
-    [SerializeField] Renderer enemyRend;
+    [SerializeField] private GameObject modelR;
+    [SerializeField] private GameObject modelG;
+    [SerializeField] private GameObject modelB;
 
+    [Header("Enemy Parameters")]
     [SerializeField] public float health = 30.0f;
     [SerializeField] public GameObject turret;
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
@@ -48,8 +48,6 @@ public class EnemyBehavior : MonoBehaviour
             StartCoroutine(Death());
 
             //added the score after death
-           
-
         }
         /*if(timerDeath <= 0)
         {
@@ -96,15 +94,15 @@ public class EnemyBehavior : MonoBehaviour
         {
             case 0:
                 enemyColor = EnemyColor.red;
-                enemyRend.material = materialR;
+                modelR.SetActive(true);
                 break;
             case 1:
                 enemyColor = EnemyColor.green;
-                enemyRend.material = materialG;
+                modelG.SetActive(true);
                 break;
             case 2:
                 enemyColor = EnemyColor.blue;
-                enemyRend.material = materialB;
+                modelB.SetActive(true);
                 break;
         }
         

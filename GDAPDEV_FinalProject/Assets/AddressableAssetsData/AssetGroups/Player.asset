@@ -22,36 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
-  - m_GUID: a98bb95fdb46ba9479d1925a5cf8abb9
-    m_Address: Particle/Firecloud.png
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Texture
-  - m_GUID: 8b9aea8fbfe0af0448cedd083128f07d
-    m_Address: Particle/CloudBlack.png
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Texture
-  - m_GUID: b18c2d8e08b3f3444a2589181f80957b
-    m_Address: Particle/Explosion.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: e1858e08ebda141469ee032b92a075ff
-    m_Address: Particle/BlackTrail.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: 291b42fb06ae864409a7a9bda68067d5
     m_Address: Spaceship/10.1.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
-  - m_GUID: d79a83adef48e0c41bf93a4d0491ac1d
-    m_Address: Spaceship/palette.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: a5c43b1f8e132234f87b1ef20016336b
     m_Address: Spaceship/palette.png
     m_ReadOnly: 0
@@ -67,11 +42,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: b16ec8b6b0884b44fbc76f7b549312b7
-    m_Address: Turret.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: 278c3af84857ccb44a84b272af6afbb1
     m_Address: Bullet.prefab
     m_ReadOnly: 0
@@ -87,6 +57,10 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Texture
+  - m_GUID: 6d5358a0b13e9fd4681f1ed6f859840c
+    m_Address: Sound Effects/EngineLow.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
   m_SchemaSet:

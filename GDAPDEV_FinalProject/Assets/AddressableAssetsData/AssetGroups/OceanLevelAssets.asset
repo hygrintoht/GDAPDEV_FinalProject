@@ -10,15 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Default Local Group
+  m_Name: OceanLevelAssets
   m_EditorClassIdentifier: 
-  m_GroupName: Default Local Group
+  m_GroupName: OceanLevelAssets
   m_Data:
     m_SerializedData: []
-  m_GUID: df415e4ea3635e64da9386474ad800e4
+  m_GUID: fbf9a3ff33b20ba439a7f572bb0085c0
   m_SerializeEntries:
-  - m_GUID: d79a83adef48e0c41bf93a4d0491ac1d
-    m_Address: Spaceship/palette.mat
+  - m_GUID: 2b8ecbf6e550867478100cfc0d199cab
+    m_Address: GroundPlane.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ocean
+  - m_GUID: f1e29f8ecb6682f4e9dbb8c24c62a3c7
+    m_Address: Water2.mat
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
@@ -26,5 +31,5 @@ MonoBehaviour:
   m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: 388d0ea6ca9aa634b9906a897ad15356, type: 2}
-    - {fileID: 11400000, guid: b4b25f83545aa3d4b84f8cd6347efa16, type: 2}
+    - {fileID: 11400000, guid: 5fb59ddafed870b46995793fa61720ab, type: 2}
+    - {fileID: 11400000, guid: 606ebe897540d3649b0cf4a43c2eab71, type: 2}

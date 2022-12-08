@@ -46,6 +46,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e969a92368f6e9448790bd054ca7800, type: 2}
   - {fileID: 11400000, guid: 090d7d0d4bdbc18468bef8ec08b21097, type: 2}
   - {fileID: 11400000, guid: 197f8baac0f92ac42b045288ca415459, type: 2}
+  - {fileID: 11400000, guid: ea980a3a669cc224797e6affaab36f29, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -92,6 +93,7 @@ MonoBehaviour:
     - Prefab
     - Mesh
     - Essential
+    - Ocean
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: e17e56b47af62094f95ea8bd00f388ed, type: 2}
