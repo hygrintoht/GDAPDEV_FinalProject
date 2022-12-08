@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 8942390252437801618}
   - component: {fileID: 1821476917}
   - component: {fileID: 9217925605835729085}
-  - component: {fileID: 3330823177497589946}
+  - component: {fileID: 1763046488520476234}
   m_Layer: 3
   m_Name: ShipObject
   m_TagString: Untagged
@@ -541,7 +541,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &3330823177497589946
+--- !u!54 &1763046488520476234
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -555,7 +555,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!1 &785395580189837623
 GameObject:

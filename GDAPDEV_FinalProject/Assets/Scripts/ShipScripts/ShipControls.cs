@@ -103,6 +103,7 @@ public class ShipControls : MonoBehaviour
             if (shieldTimer <= 0)//if sheild timer is not counting down
             {
                 HP--;
+                Debug.Log("Hit");
             }
             if (HP <= 0)//if hp is lower than 1
             {
@@ -110,7 +111,7 @@ public class ShipControls : MonoBehaviour
                 //Call the UI
             }
         }
-        else if(collision.gameObject.layer == 11)
+        else if(collision.gameObject.layer == 11) 
         {
             GameData.Instance.UpdateScore(50);
         }
