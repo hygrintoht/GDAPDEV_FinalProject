@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  m_GroupName: Player
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 43925921bcd936a49aa12cbd5a1c04a1
+  m_SerializeEntries:
+  - m_GUID: b419838959e9482469ff23ac3a5dcf09
+    m_Address: PlayerModel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: a98bb95fdb46ba9479d1925a5cf8abb9
+    m_Address: Particle/Firecloud.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: 8b9aea8fbfe0af0448cedd083128f07d
+    m_Address: Particle/CloudBlack.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: b18c2d8e08b3f3444a2589181f80957b
+    m_Address: Particle/Explosion.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: e1858e08ebda141469ee032b92a075ff
+    m_Address: Particle/BlackTrail.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: 291b42fb06ae864409a7a9bda68067d5
+    m_Address: Spaceship/10.1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: d79a83adef48e0c41bf93a4d0491ac1d
+    m_Address: Spaceship/palette.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: a5c43b1f8e132234f87b1ef20016336b
+    m_Address: Spaceship/palette.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: fa0aa6bff32824543867fa32625af529
+    m_Address: Spaceship/10.1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Mesh
+  - m_GUID: a7cd58e9d9e249a408b621fb9f2f73e7
+    m_Address: Spaceship/Shield.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: b16ec8b6b0884b44fbc76f7b549312b7
+    m_Address: Turret.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 278c3af84857ccb44a84b272af6afbb1
+    m_Address: Bullet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: d73f25f6362244742bdf63e54c96b946
+    m_Address: Reticle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: 87ecac4e6fa141642b533658e003cf99
+    m_Address: Reticle.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b81163fd4bdf0ea4f8548f04229ff4aa, type: 2}
+    - {fileID: 11400000, guid: a4260f99a5bb1c94891c6accd6869b91, type: 2}

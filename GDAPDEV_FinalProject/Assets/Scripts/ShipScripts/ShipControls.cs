@@ -8,24 +8,24 @@ using UnityEngine.InputSystem;
 public class ShipControls : MonoBehaviour
 {
     //input parameters
+    [Header("Input Parameters")]
     [SerializeField]PlayerInput playerInput;
     Vector2 input;
     float gravityValue = 2.0f;
-
-    //ship parameters
-    [SerializeField] float moveSpeed = 1.0f;
-
     float hori = 0;
     float vert = 0;
     Vector3 direction = Vector3.zero;
     Vector3 finalDirection = Vector3.zero;
     Vector3 relPos;
 
+    //ship parameters
+    [Header("Ship Parameters")]
+    [SerializeField] float moveSpeed = 1.0f;
     [SerializeField] public int maxHP = 5;
-
     [SerializeField] public int HP;
 
     //turret parameters
+    [Header("Turret Parameters")]
     [SerializeField] Turret[] turrets;
     [SerializeField] public float fireRate = 5.0f;
     [SerializeField] Turret.BulletType currBulletType = Turret.BulletType.red;
@@ -34,20 +34,31 @@ public class ShipControls : MonoBehaviour
     bool isFireing = false;
 
     //sheild parameters
+    [Header("Shield Parameters")]
     [SerializeField] int shieldCount = 1;
     [SerializeField] float shieldDuration = 3.0f;
 
     float shieldTimer = 0;
-    [SerializeField] private Animator shipAnimator;
-    [SerializeField] private GameObject shield;
+
+    [Header("Animation and SFX")]
+    [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem deathExplotion;
-    [SerializeField] private Multiplier multiplierData;
+    [SerializeField] private GameObject shield;
+    private Multiplier multiplierData;
 
     //Upgrade Parameters
 
-
-
     //unity events
+    private void Awake()
+    {
+        EventBroadcaster.Instance.AddObserver(EventNames.ON_FIRE, this.Fire);
+        multiplierData = GetComponent<Multiplier>();
+    }
+    private void OnDestroy()
+    {
+        EventBroadcaster.Instance.RemoveObserver(EventNames.ON_FIRE);
+    }
+
     void Start()
     {
         ShipInit();
@@ -56,32 +67,8 @@ public class ShipControls : MonoBehaviour
 
     void Update()
     {
-        input = playerInput.actions["Move"].ReadValue<Vector2>() * gravityValue;
-        //movment update(to be changed for the tutorial)
-        hori = input.x;//Input.GetAxis("Horizontal");
-        vert = input.y;//Input.GetAxis("Vertical");
-
-        direction = new Vector3(hori, vert, 0);
-        finalDirection = new Vector3(hori, vert, 2.0f);
-
-        transform.position += direction * moveSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad*100.0f);
-
-        relPos = Camera.main.WorldToViewportPoint(transform.position);
-        relPos.x = Mathf.Clamp01(relPos.x);
-        relPos.y = Mathf.Clamp01(relPos.y);
-        transform.position = Camera.main.ViewportToWorldPoint(relPos);
-
-        //shooting update(finished)
-        if (/*Input.GetButton("Fire1") ||*/ isFireing)
-        {
-            if (fireCountdown <= 0)
-            {
-                ShootTurrets();
-                fireCountdown = 1.0f / fireRate;
-            }
-            fireCountdown -= Time.deltaTime;
-        }
+        Movement();
+        FireTurret();
 
         //shield timer update
         if (shieldTimer > 0)
@@ -95,17 +82,59 @@ public class ShipControls : MonoBehaviour
 
     }
 
+    private void FireTurret()
+    {
+        //shooting update(finished)
+        if (/*Input.GetButton("Fire1") ||*/ isFireing)
+        {
+            if (fireCountdown <= 0)
+            {
+                ShootTurrets();
+                fireCountdown = 1.0f / fireRate;
+            }
+            fireCountdown -= Time.deltaTime;
+        }
+    }
+
+    private void Movement()
+    {
+        input = playerInput.actions["Move"].ReadValue<Vector2>() * gravityValue;
+        //movment update(to be changed for the tutorial)
+        hori = input.x;//Input.GetAxis("Horizontal");
+        vert = input.y;//Input.GetAxis("Vertical");
+
+        direction = new Vector3(hori, vert, 0);
+        finalDirection = new Vector3(hori, vert, 2.0f);
+
+        transform.position += direction * moveSpeed * Time.deltaTime;
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(finalDirection), Mathf.Deg2Rad * 100.0f);
+
+        relPos = Camera.main.WorldToViewportPoint(transform.position);
+        relPos.x = Mathf.Clamp01(relPos.x);
+        relPos.y = Mathf.Clamp01(relPos.y);
+        transform.position = Camera.main.ViewportToWorldPoint(relPos);
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if (shieldTimer <= 0)//if sheild timer is not counting down
         {
             HP--;
+            UpdateUI();
         }
         if (HP <= 0)//if hp is lower than 1
         {
             ShipDeath();
             //Call the UI
         }
+    }
+
+    private void UpdateUI()
+    {
+        Parameters health = new Parameters();
+        health.PutExtra("playerHealth", HP);
+        health.PutExtra("maxHealth", maxHP);
+        EventBroadcaster.Instance.PostEvent(EventNames.ON_HIT, health);
     }
 
     void ShootTurrets()//loops through turrets that needs to shoot a bullet type
@@ -121,9 +150,9 @@ public class ShipControls : MonoBehaviour
         deathExplotion.Play();
     }
 
-    public void Fire(bool pressed)//changes the ship state if firing
+    public void Fire(Parameters state)//changes the ship state if firing
     {
-        isFireing = pressed;
+        isFireing = state.GetBoolExtra(EventNames.ON_FIRE, false);
     }
 
     public void ChangeBulletType(bool change)//shifts to another bullet type (0 backward 1 forward)
@@ -167,7 +196,7 @@ public class ShipControls : MonoBehaviour
         while (rollTimer < rollDuration)
         {
             gameObject.transform.position = Vector3.Lerp(start, target, rollTimer / rollDuration);
-            shipAnimator.SetTrigger(animate);
+            animator.SetTrigger(animate);
             rollTimer += Time.deltaTime;
             yield return null;
         }

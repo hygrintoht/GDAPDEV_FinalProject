@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: LevelEssentials
+  m_EditorClassIdentifier: 
+  m_GroupName: LevelEssentials
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 2273e8928e746ba4aac7e1fb87b2b226
+  m_SerializeEntries:
+  - m_GUID: fccf6b58476499043876dbcf156053a9
+    m_Address: Game UI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Essential
+  - m_GUID: 0974ceb57dff0c846a40d4980010f4e3
+    m_Address: GameManager.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Essential
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: ad635a3a22f77f9488598d441a0aa20f, type: 2}
+    - {fileID: 11400000, guid: cd3ed47a9c7ae4a489af97a77ce89e3a, type: 2}
