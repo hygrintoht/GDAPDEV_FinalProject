@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3168226804216852699}
-  - component: {fileID: 3168226804216852698}
   - component: {fileID: 1740734044}
   m_Layer: 0
   m_Name: Game Manager
@@ -33,21 +32,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3168226804216852698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3168226804216852696}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f30cc2fa4b9fd9438122a7e256153b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthMultiplier: 1
-  attackMultiplier: 0.5
-  attackSpdMultiplier: 0.25
 --- !u!114 &1740734044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,5 +49,10 @@ MonoBehaviour:
   progBarObj: {fileID: 0}
   progFillBar: {fileID: 0}
   bossLabel: {fileID: 0}
-  shipInfo: {fileID: 0}
-  timer: 2
+  scoreSection: {fileID: 0}
+  scoreTxt: {fileID: 0}
+  multiplierTxt: {fileID: 0}
+  totalEarningTxt: {fileID: 0}
+  timer: 90
+  score_Multiplier: 1
+  boss: {fileID: 0}

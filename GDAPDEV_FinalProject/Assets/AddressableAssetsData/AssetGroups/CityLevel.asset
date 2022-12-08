@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: CityLevel
+  m_EditorClassIdentifier: 
+  m_GroupName: CityLevel
+  m_Data:
+    m_SerializedData: []
+  m_GUID: a5060ae2f7104ff40aaf237764649d33
+  m_SerializeEntries:
+  - m_GUID: 90065356a8354d645ae7e3b7061ec429
+    m_Address: City_Ground.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  - m_GUID: c656d22ce882d5344a4ea75474ad689b
+    m_Address: Metal 2.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  - m_GUID: b90f4cdef27b43f43b00a0426d57fd7a
+    m_Address: Metal 2 Emission.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  - m_GUID: 6861d0e9343e3a645a73b080fb5220d3
+    m_Address: Metal 2 Normals.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  - m_GUID: f68c244620355b24ea69b3c509b05d3a
+    m_Address: Metal 2 Displacement.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  - m_GUID: 0bd03daf53587804f8eccca99c622735
+    m_Address: Metal 2 AO.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  - m_GUID: 0a4b5fba993335c4bb1e640ba9ceda35
+    m_Address: Metal 2.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - City
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 88b3cb97375fcc048b8d15c4d874bdc9, type: 2}
+    - {fileID: 11400000, guid: 30c447f1cbb83f34fa5a9dca3d2384d7, type: 2}

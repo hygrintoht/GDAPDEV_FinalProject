@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Enemies
+  m_EditorClassIdentifier: 
+  m_GroupName: Enemies
+  m_Data:
+    m_SerializedData: []
+  m_GUID: b9abeac0fd33d994a9228a640359fb72
+  m_SerializeEntries:
+  - m_GUID: fdc63a60437d1424ea11d8729049d32d
+    m_Address: Spaceship/Enemy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 3d9ce70bd167b71469f5ab332d2c2f26
+    m_Address: Spaceship/1.3.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 27eaa223735c9e64caa98cb7b2945c26
+    m_Address: Spaceship/1.3.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Mesh
+  - m_GUID: b16ec8b6b0884b44fbc76f7b549312b7
+    m_Address: Turret.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 7934b82d43478c04fac3071c6329d1b0
+    m_Address: SpawnerGroup.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8f0637183efbf1f4bb2e32233823e719
+    m_Address: SoundEffect/Explode.wav
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6ed72ca317f4cbf46b88fb0cb3f09e72, type: 2}
+    - {fileID: 11400000, guid: bc2c469198fa1364b978cfb6ee4a64d1, type: 2}
