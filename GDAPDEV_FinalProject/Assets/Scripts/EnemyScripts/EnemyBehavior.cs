@@ -11,11 +11,12 @@ public class EnemyBehavior : MonoBehaviour
 
     [SerializeField] public Multiplier atkDamage;
 
-    [SerializeField] Material materialR;
-    [SerializeField] Material materialG;
-    [SerializeField] Material materialB;
-    [SerializeField] Renderer enemyRend;
+    [SerializeField] private Material modelR;
+    [SerializeField] private Material modelG;
+    [SerializeField] private Material modelB;
+    [SerializeField] private MeshRenderer shipRenderer;
 
+    [Header("Enemy Parameters")]
     [SerializeField] public float health = 30.0f;
     [SerializeField] public GameObject turret;
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
@@ -24,13 +25,14 @@ public class EnemyBehavior : MonoBehaviour
     //[SerializeField] float timeAlive = 20.0f;
 
     [Header("Particle System with Sound")]
-    [SerializeField] public ParticleSystem deathParticles;
+    [SerializeField] public List<ParticleSystem> deathParticles;
 
     Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
     //float timerDeath;
 
     public float Health { get { return health; } }
+
     void Start()
     {
         InitEnemyData();
@@ -44,12 +46,13 @@ public class EnemyBehavior : MonoBehaviour
 
         if(health <= 0)
         {
-            deathParticles.Play();
+            foreach (ParticleSystem effect in deathParticles)
+            {
+                effect.Play();
+            }
             StartCoroutine(Death());
 
             //added the score after death
-           
-
         }
         /*if(timerDeath <= 0)
         {
@@ -96,15 +99,15 @@ public class EnemyBehavior : MonoBehaviour
         {
             case 0:
                 enemyColor = EnemyColor.red;
-                enemyRend.material = materialR;
+                shipRenderer.material = modelR;
                 break;
             case 1:
                 enemyColor = EnemyColor.green;
-                enemyRend.material = materialG;
+                shipRenderer.material = modelG;
                 break;
             case 2:
                 enemyColor = EnemyColor.blue;
-                enemyRend.material = materialB;
+                shipRenderer.material = modelB;
                 break;
         }
         

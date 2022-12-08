@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Player
+  m_EditorClassIdentifier: 
+  m_GroupName: Player
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 43925921bcd936a49aa12cbd5a1c04a1
+  m_SerializeEntries:
+  - m_GUID: b419838959e9482469ff23ac3a5dcf09
+    m_Address: PlayerModel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: 291b42fb06ae864409a7a9bda68067d5
+    m_Address: Spaceship/10.1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: a5c43b1f8e132234f87b1ef20016336b
+    m_Address: Spaceship/palette.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: fa0aa6bff32824543867fa32625af529
+    m_Address: Spaceship/10.1.fbx
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Mesh
+  - m_GUID: a7cd58e9d9e249a408b621fb9f2f73e7
+    m_Address: Spaceship/Shield.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: 278c3af84857ccb44a84b272af6afbb1
+    m_Address: Bullet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: d73f25f6362244742bdf63e54c96b946
+    m_Address: Reticle.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: 87ecac4e6fa141642b533658e003cf99
+    m_Address: Reticle.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: 6d5358a0b13e9fd4681f1ed6f859840c
+    m_Address: Sound Effects/EngineLow.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: bf108888da240b34cac07cab65a11845
+    m_Address: Sound Effects/Laser.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: b81163fd4bdf0ea4f8548f04229ff4aa, type: 2}
+    - {fileID: 11400000, guid: a4260f99a5bb1c94891c6accd6869b91, type: 2}

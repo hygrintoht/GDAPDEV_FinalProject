@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class ShipGestureReciver : MonoBehaviour
 {
-    [SerializeField]ShipControls ship;
+    private ShipControls ship;
+    private void Awake()
+    {
+        ship = GetComponent<ShipControls>();
+    }
 
     void Start()
     {
