@@ -40,7 +40,10 @@ public class BossBehavior : EnemyBehavior
 
         if (health <= 0)
         {
-            deathParticles.Play();
+            foreach (ParticleSystem effects in deathParticles)
+            {
+                effects.Play();
+            }
             GameData.Instance.UpdateScore(2000);
             Destroy(this);//kasi singleton
 

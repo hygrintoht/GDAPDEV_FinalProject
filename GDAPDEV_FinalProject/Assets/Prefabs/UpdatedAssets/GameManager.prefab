@@ -73,7 +73,7 @@ MonoBehaviour:
   totalEarningTxt: {fileID: 2804726917482497417}
   timer: 30
   score_Multiplier: 1
-  boss: {fileID: 4536993650139303760}
+  boss: {fileID: 8988223200832431372}
 --- !u!114 &4523536890901321959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,11 +275,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6393783178994282827, guid: fccf6b58476499043876dbcf156053a9, type: 3}
   m_PrefabInstance: {fileID: 8129079635471321819}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4536993650139303760 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5631445068631033227, guid: fccf6b58476499043876dbcf156053a9, type: 3}
-  m_PrefabInstance: {fileID: 8129079635471321819}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6117430882568353165 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2609044482563047254, guid: fccf6b58476499043876dbcf156053a9, type: 3}
@@ -305,5 +300,10 @@ MonoBehaviour:
 --- !u!1 &7281569246576572742 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1575448969733714845, guid: fccf6b58476499043876dbcf156053a9, type: 3}
+  m_PrefabInstance: {fileID: 8129079635471321819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8988223200832431372 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 895336419934597079, guid: fccf6b58476499043876dbcf156053a9, type: 3}
   m_PrefabInstance: {fileID: 8129079635471321819}
   m_PrefabAsset: {fileID: 0}

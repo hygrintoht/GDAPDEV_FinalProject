@@ -11,9 +11,10 @@ public class EnemyBehavior : MonoBehaviour
 
     [SerializeField] public Multiplier atkDamage;
 
-    [SerializeField] private GameObject modelR;
-    [SerializeField] private GameObject modelG;
-    [SerializeField] private GameObject modelB;
+    [SerializeField] private Material modelR;
+    [SerializeField] private Material modelG;
+    [SerializeField] private Material modelB;
+    [SerializeField] private MeshRenderer shipRenderer;
 
     [Header("Enemy Parameters")]
     [SerializeField] public float health = 30.0f;
@@ -24,13 +25,14 @@ public class EnemyBehavior : MonoBehaviour
     //[SerializeField] float timeAlive = 20.0f;
 
     [Header("Particle System with Sound")]
-    [SerializeField] public ParticleSystem deathParticles;
+    [SerializeField] public List<ParticleSystem> deathParticles;
 
     Action<EnemyBehavior> action;
     Vector3 moveDir = Vector3.zero;
     //float timerDeath;
 
     public float Health { get { return health; } }
+
     void Start()
     {
         InitEnemyData();
@@ -44,7 +46,10 @@ public class EnemyBehavior : MonoBehaviour
 
         if(health <= 0)
         {
-            deathParticles.Play();
+            foreach (ParticleSystem effect in deathParticles)
+            {
+                effect.Play();
+            }
             StartCoroutine(Death());
 
             //added the score after death
@@ -94,15 +99,15 @@ public class EnemyBehavior : MonoBehaviour
         {
             case 0:
                 enemyColor = EnemyColor.red;
-                modelR.SetActive(true);
+                shipRenderer.material = modelR;
                 break;
             case 1:
                 enemyColor = EnemyColor.green;
-                modelG.SetActive(true);
+                shipRenderer.material = modelG;
                 break;
             case 2:
                 enemyColor = EnemyColor.blue;
-                modelB.SetActive(true);
+                shipRenderer.material = modelB;
                 break;
         }
         
