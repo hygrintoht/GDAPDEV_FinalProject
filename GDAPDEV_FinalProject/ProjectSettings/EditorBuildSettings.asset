@@ -12,6 +12,6 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerHub.unity
     guid: b35926752329c5d43b9231d7d2bc092d
   - enabled: 1
-    path: Assets/Scenes/GameScene.unity
+    path: Assets/Scenes/Ocean.unity
     guid: 73ecf06c89a714045bb9bdbcb924c596
   m_configObjects: {}
