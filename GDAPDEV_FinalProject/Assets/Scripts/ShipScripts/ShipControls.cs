@@ -95,16 +95,24 @@ public class ShipControls : MonoBehaviour
 
     }
 
-    void OnTriggerEnter()
+    void OnCollisionEnter(Collision collision)
     {
-        if (shieldTimer <= 0)//if sheild timer is not counting down
+
+        if (collision.gameObject.layer != 11)
         {
-            HP--;
+            if (shieldTimer <= 0)//if sheild timer is not counting down
+            {
+                HP--;
+            }
+            if (HP <= 0)//if hp is lower than 1
+            {
+                ShipDeath();
+                //Call the UI
+            }
         }
-        if (HP <= 0)//if hp is lower than 1
+        else if(collision.gameObject.layer == 11)
         {
-            ShipDeath();
-            //Call the UI
+            GameData.Instance.UpdateScore(50);
         }
     }
 
@@ -187,6 +195,11 @@ public class ShipControls : MonoBehaviour
     public void Bomb()//i think im going to scrap this unless i know how to implement this to the enemy manager
     {
 
+    }
+
+    public void Revive()
+    {
+        HP++;
     }
 
     //private Function
