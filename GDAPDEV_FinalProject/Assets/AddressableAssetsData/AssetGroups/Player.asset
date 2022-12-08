@@ -61,6 +61,10 @@ MonoBehaviour:
     m_Address: Sound Effects/EngineLow.ogg
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: bf108888da240b34cac07cab65a11845
+    m_Address: Sound Effects/Laser.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
   m_SchemaSet:

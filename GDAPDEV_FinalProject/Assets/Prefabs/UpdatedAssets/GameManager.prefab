@@ -71,7 +71,7 @@ MonoBehaviour:
   scoreTxt: {fileID: 2804726917047630912}
   multiplierTxt: {fileID: 2804726916044922999}
   totalEarningTxt: {fileID: 2804726917482497417}
-  timer: 10
+  timer: 30
   score_Multiplier: 1
   boss: {fileID: 4536993650139303760}
 --- !u!114 &4523536890901321959

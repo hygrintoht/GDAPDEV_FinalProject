@@ -44,9 +44,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 35a9146e92b96bc42b3e7dc51d499d97, type: 2}
   - {fileID: 11400000, guid: 3333a86bd8b9fb846983fdddd03d0db2, type: 2}
   - {fileID: 11400000, guid: 5e969a92368f6e9448790bd054ca7800, type: 2}
-  - {fileID: 11400000, guid: 090d7d0d4bdbc18468bef8ec08b21097, type: 2}
   - {fileID: 11400000, guid: 197f8baac0f92ac42b045288ca415459, type: 2}
   - {fileID: 11400000, guid: ea980a3a669cc224797e6affaab36f29, type: 2}
+  - {fileID: 11400000, guid: 254b4f0da2a25dd41b37f5fbb06d0c31, type: 2}
+  - {fileID: 11400000, guid: 8227761c716b01846b9b4493e4249a50, type: 2}
   m_BuildSettings:
     m_CompileScriptsInVirtualMode: 0
     m_CleanupStreamingAssetsAfterBuilds: 1
@@ -94,6 +95,8 @@ MonoBehaviour:
     - Mesh
     - Essential
     - Ocean
+    - City
+    - Cave
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: e17e56b47af62094f95ea8bd00f388ed, type: 2}

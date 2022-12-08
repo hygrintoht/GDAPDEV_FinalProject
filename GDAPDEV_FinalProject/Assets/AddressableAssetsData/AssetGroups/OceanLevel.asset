@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: OceanLevelAssets
+  m_Name: OceanLevel
   m_EditorClassIdentifier: 
-  m_GroupName: OceanLevelAssets
+  m_GroupName: OceanLevel
   m_Data:
     m_SerializedData: []
   m_GUID: fbf9a3ff33b20ba439a7f572bb0085c0
   m_SerializeEntries:
   - m_GUID: 2b8ecbf6e550867478100cfc0d199cab
-    m_Address: GroundPlane.prefab
+    m_Address: OceanGround.prefab
     m_ReadOnly: 0
     m_SerializedLabels:
     - Ocean
@@ -27,6 +27,12 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
+    - Ocean
+  - m_GUID: f494f035f2e9bb747ae745519cdded3b
+    m_Address: Water.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Ocean
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
   m_SchemaSet:

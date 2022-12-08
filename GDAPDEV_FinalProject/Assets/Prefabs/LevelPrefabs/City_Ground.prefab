@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2874282804226466160}
   - component: {fileID: 314118232}
   m_Layer: 0
-  m_Name: GroundPlane
+  m_Name: City_Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f1e29f8ecb6682f4e9dbb8c24c62a3c7, type: 2}
+  - {fileID: 2100000, guid: c656d22ce882d5344a4ea75474ad689b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

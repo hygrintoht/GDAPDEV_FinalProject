@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5d17a21594effb4e9591490b009e7aa, type: 3}
-  m_Name: OceanLevelAssets_BundledAssetGroupSchema
+  m_Name: CityLevel_BundledAssetGroupSchema
   m_EditorClassIdentifier: 
-  m_Group: {fileID: 11400000, guid: ea980a3a669cc224797e6affaab36f29, type: 2}
+  m_Group: {fileID: 11400000, guid: 254b4f0da2a25dd41b37f5fbb06d0c31, type: 2}
   m_InternalBundleIdMode: 1
   m_Compression: 1
   m_IncludeAddressInCatalog: 1

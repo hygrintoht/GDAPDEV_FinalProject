@@ -246,9 +246,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49df505b4d9301a409d0bbd1042cbe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3414837627257192264, guid: 1a04772a6db4390469069e0e99c0abae, type: 3}
+  enemyPrefab: {fileID: 5990064651004317353, guid: fdc63a60437d1424ea11d8729049d32d, type: 3}
   spawnerDirection: 0
   deathSound: {fileID: 8888131038344151769}
+  minSpawnTime: 5
+  maxSpawnTime: 15
 --- !u!1 &8495206273545815521
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,9 +347,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49df505b4d9301a409d0bbd1042cbe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3414837627257192264, guid: 1a04772a6db4390469069e0e99c0abae, type: 3}
+  enemyPrefab: {fileID: 5990064651004317353, guid: fdc63a60437d1424ea11d8729049d32d, type: 3}
   spawnerDirection: 5
   deathSound: {fileID: 8888131038344151769}
+  minSpawnTime: 5
+  maxSpawnTime: 15
 --- !u!1 &8495206274452491279
 GameObject:
   m_ObjectHideFlags: 0
@@ -444,9 +448,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49df505b4d9301a409d0bbd1042cbe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3414837627257192264, guid: 1a04772a6db4390469069e0e99c0abae, type: 3}
+  enemyPrefab: {fileID: 5990064651004317353, guid: fdc63a60437d1424ea11d8729049d32d, type: 3}
   spawnerDirection: 1
   deathSound: {fileID: 8888131038344151769}
+  minSpawnTime: 5
+  maxSpawnTime: 15
 --- !u!1 &8495206274762450030
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49df505b4d9301a409d0bbd1042cbe53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 3414837627257192264, guid: 1a04772a6db4390469069e0e99c0abae, type: 3}
+  enemyPrefab: {fileID: 5990064651004317353, guid: fdc63a60437d1424ea11d8729049d32d, type: 3}
   spawnerDirection: 3
   deathSound: {fileID: 8888131038344151769}
+  minSpawnTime: 5
+  maxSpawnTime: 15
