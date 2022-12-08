@@ -7,6 +7,7 @@ public class RewardsAdsExample : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 {
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iosAdunitId = "Rewarded_iOS";
+    [SerializeField] private GameObject parentConfirmTab;
     string _adUnitID;
 
     private void Awake()
@@ -41,7 +42,17 @@ public class RewardsAdsExample : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     public void OnUnityAdsShowStart(string placementId) { }
     public void OnUnityAdsShowClick(string placementId) { }
-    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState) { }
+    public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState) {
+
+        if (parentConfirmTab != null)
+        {
+            parentConfirmTab.SetActive(false);
+        }
+
+        else
+            Debug.LogWarning("Missing Reference with the parent confirm Tab");
+        
+    }
 
 
     public void LoadAd()

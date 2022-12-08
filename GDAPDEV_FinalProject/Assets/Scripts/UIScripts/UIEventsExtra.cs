@@ -1,18 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 using UnityEngine.UI;
-
-using UnityEngine.Networking;
-using Newtonsoft.Json;
-using System.Text;
 
 public class UIEventsExtra : MonoBehaviour
 {
 
     [Header("Confirm Section")]
     [SerializeField] private GameObject confirmSection_1; //Confirm Tab: For Adding Currency
+    [SerializeField] private GameObject confirmSection_Upgrades;
 
     [Header("LeaderBoardHolder")]
     [SerializeField] private GameObject Level_1Section;
@@ -54,7 +50,7 @@ public class UIEventsExtra : MonoBehaviour
     {
 
         //Color Handling
-        initColor();
+        InitColor();
 
         //Set all Gameobject Reference to false
 
@@ -67,7 +63,7 @@ public class UIEventsExtra : MonoBehaviour
         activeLeaderTab.SetActive(true);
 
         //Setup the container
-        setupContainer();
+        SetupContainer();
 
     }
 
@@ -142,7 +138,7 @@ public class UIEventsExtra : MonoBehaviour
 
     }
 
-    public void setupContainer()
+    public void SetupContainer()
     {
         //init Game Object
         Level_1DataPanelList = new List<GameObject>();
@@ -157,7 +153,7 @@ public class UIEventsExtra : MonoBehaviour
 
 
     /*Transfering Data Section*/
-    public void initData()
+    public void InitData()
     {
         ResetAllData();
 
@@ -309,7 +305,7 @@ public class UIEventsExtra : MonoBehaviour
 
 
     //Color Handling
-    private void initColor()
+    private void InitColor()
     {
 
         //For Tab Color Handling
