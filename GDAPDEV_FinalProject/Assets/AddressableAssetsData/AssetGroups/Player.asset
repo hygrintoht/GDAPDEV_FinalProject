@@ -42,11 +42,6 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Material
-  - m_GUID: 278c3af84857ccb44a84b272af6afbb1
-    m_Address: Bullet.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
   - m_GUID: d73f25f6362244742bdf63e54c96b946
     m_Address: Reticle.mat
     m_ReadOnly: 0

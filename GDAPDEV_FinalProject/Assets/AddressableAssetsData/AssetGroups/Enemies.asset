@@ -27,51 +27,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Prefab
-  - m_GUID: a58f66d4f338c4c4f9ca1055fc7e04e8
-    m_Address: Ship_Blue.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: 0cb54e7759dad9d43add7812c8967d4d
-    m_Address: Ship_Green.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: 3bc678d12d9ae9d41ae00b6e994449e0
-    m_Address: Ship_Red.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: 27eaa223735c9e64caa98cb7b2945c26
     m_Address: Spaceship/1.3.fbx
     m_ReadOnly: 0
     m_SerializedLabels:
     - Mesh
-  - m_GUID: 06b4fb27e2f7cab49b3934e56eea94bf
-    m_Address: RandTurretHolder.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Prefab
-  - m_GUID: a98bb95fdb46ba9479d1925a5cf8abb9
-    m_Address: Particle/Firecloud.png
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Texture
-  - m_GUID: 8b9aea8fbfe0af0448cedd083128f07d
-    m_Address: Particle/CloudBlack.png
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Texture
-  - m_GUID: e1858e08ebda141469ee032b92a075ff
-    m_Address: Particle/BlackTrail.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
-  - m_GUID: b18c2d8e08b3f3444a2589181f80957b
-    m_Address: Particle/Explosion.mat
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - Material
   - m_GUID: b16ec8b6b0884b44fbc76f7b549312b7
     m_Address: Turret.prefab
     m_ReadOnly: 0
