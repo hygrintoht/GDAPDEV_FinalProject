@@ -3737,6 +3737,10 @@ PrefabInstance:
       value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4523536890901321958, guid: 0974ceb57dff0c846a40d4980010f4e3, type: 3}
+      propertyPath: levelCode
+      value: 102
+      objectReference: {fileID: 0}
+    - target: {fileID: 4523536890901321958, guid: 0974ceb57dff0c846a40d4980010f4e3, type: 3}
       propertyPath: score_Multiplier
       value: 2
       objectReference: {fileID: 0}

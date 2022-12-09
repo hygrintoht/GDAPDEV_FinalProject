@@ -23,6 +23,8 @@ public class GameUIBehaviour : MonoBehaviour
     [Header("GameData")]
     [SerializeField] private float timer = 10.0f;
     [SerializeField] private float score_Multiplier = 1.0f;
+    [SerializeField] private WebAPI uploadLocation;
+    [SerializeField] private int levelCode;
 
     [SerializeField] GameObject boss;
 
@@ -185,8 +187,19 @@ public class GameUIBehaviour : MonoBehaviour
         {
             float earnings = scores * score_Multiplier;
             GameData.Instance.UpdateCurrency((int)earnings);
+            UploadData();
             hasDataUploaded = true;
+            Debug.LogWarning("Done Updating");
         }
         
+    }
+
+    public void UploadData()
+    {
+        Debug.Log($"Level Code: {levelCode.ToString()}");
+        Debug.Log($"Player user name: {GameData.Instance.RetrieveName()}");
+        Debug.Log($"Player Score: {GameData.Instance.RetrieveScore()}");
+
+        uploadLocation.SendScore(levelCode, GameData.Instance.RetrieveName(), GameData.Instance.RetrieveScore());
     }
 }
