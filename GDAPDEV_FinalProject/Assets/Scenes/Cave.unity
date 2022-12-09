@@ -740,6 +740,10 @@ PrefabInstance:
       propertyPath: deathParticles
       value: 
       objectReference: {fileID: 152322877}
+    - target: {fileID: 2967237730837842305, guid: f5738594729d84146bd34012708a9249, type: 3}
+      propertyPath: maxYDistanceFromCenter
+      value: 7.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5738594729d84146bd34012708a9249, type: 3}
 --- !u!1 &152322876 stripped

@@ -117,12 +117,18 @@ public class ShipControls : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (shieldTimer <= 0)//if sheild timer is not counting down
-        {
-            HP--;
-            UpdateUI();
+            if (shieldTimer <= 0)//if sheild timer is not counting down
+            {
+                HP--;
+                //Debug.Log("Hit");
+            }
+            if (HP <= 0)//if hp is lower than 1
+            {
+                ShipDeath();
+                //Call the UI
+            }
         }
-        if (HP <= 0)//if hp is lower than 1
+        else if(collision.gameObject.layer == 11) 
         {
             ShipDeath();
             //Call the UI
