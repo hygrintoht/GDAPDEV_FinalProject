@@ -56,7 +56,7 @@ MonoBehaviour:
   modelR: {fileID: 2100000, guid: 3bc678d12d9ae9d41ae00b6e994449e0, type: 2}
   modelG: {fileID: 2100000, guid: 0cb54e7759dad9d43add7812c8967d4d, type: 2}
   modelB: {fileID: 2100000, guid: a58f66d4f338c4c4f9ca1055fc7e04e8, type: 2}
-  shipRenderer: {fileID: 0}
+  shipRenderer: {fileID: 5952541014700163890}
   health: 30
   turret: {fileID: 173970810445659620}
   enemyColor: 0
@@ -200,6 +200,11 @@ PrefabInstance:
 --- !u!4 &4814489149186406493 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 216841838431341434, guid: 14f2aa49c10232c4bb48bf85c36d0061, type: 3}
+  m_PrefabInstance: {fileID: 4743100608777483047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &5952541014700163890 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1389725920125480981, guid: 14f2aa49c10232c4bb48bf85c36d0061, type: 3}
   m_PrefabInstance: {fileID: 4743100608777483047}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8430594539914841531
