@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
+using UnityEngine.UI;
 
 public class RewardsAdsExample : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
@@ -19,7 +20,19 @@ public class RewardsAdsExample : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
 
     void Start()
     {
+        Button copyButton;
+        if(copyButton = gameObject.GetComponent<Button>())
+        {
+            copyButton.interactable = false;
+            
+        }
+
         WaitsForAdsManagerInitialized();
+
+        if (copyButton = gameObject.GetComponent<Button>())
+        {
+            copyButton.interactable = true;
+        }
     }
     
      
@@ -47,6 +60,7 @@ public class RewardsAdsExample : MonoBehaviour, IUnityAdsLoadListener, IUnityAds
         if (parentConfirmTab != null)
         {
             parentConfirmTab.SetActive(false);
+            
         }
 
         else

@@ -18,7 +18,15 @@ MonoBehaviour:
   m_GUID: 1d8ae4edde875bf4c958498d9262229e
   m_SerializeEntries:
   - m_GUID: 6889bd72d70b59141ac2292da2a007c1
-    m_Address: Assets/Prefabs/LevelPrefabs/Cave_Ground.prefab
+    m_Address: Cave_Ground.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5b398321055ad084091797b9218caf0d
+    m_Address: Cobblestone.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e4e0a1eba5ea8544cabdb7a147350e16
+    m_Address: Cobblestone.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

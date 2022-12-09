@@ -149,6 +149,7 @@ MonoBehaviour:
   animator: {fileID: 73069956504370444}
   deathExplotion: {fileID: 172976212}
   shield: {fileID: 73069957386970777}
+  shipBody: {fileID: 6815024119516938075}
 --- !u!114 &1354607409974123584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +391,11 @@ GameObject:
 --- !u!4 &5681564196946920500 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8805335978815124043, guid: 291b42fb06ae864409a7a9bda68067d5, type: 3}
+  m_PrefabInstance: {fileID: 3812911588737070719}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6815024119516938075 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7672439104711297316, guid: 291b42fb06ae864409a7a9bda68067d5, type: 3}
   m_PrefabInstance: {fileID: 3812911588737070719}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5276580277295039986

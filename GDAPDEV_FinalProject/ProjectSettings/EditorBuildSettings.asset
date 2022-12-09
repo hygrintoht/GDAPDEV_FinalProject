@@ -12,13 +12,13 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerHub.unity
     guid: b35926752329c5d43b9231d7d2bc092d
   - enabled: 1
-    path: Assets/Scenes/Ocean.unity
-    guid: 73ecf06c89a714045bb9bdbcb924c596
+    path: Assets/Scenes/Updated/Ocean_DUPLICATE.unity
+    guid: 840e0b75629d05549910770a5341b955
   - enabled: 1
-    path: Assets/Scenes/City.unity
-    guid: cbaa23caf3d1e2f4b92e7434bc1a44cc
+    path: Assets/Scenes/Updated/City_DUPLICATE.unity
+    guid: 8d4d275fe553a0a41aef1b3ff0197b98
   - enabled: 1
-    path: Assets/Scenes/Cave.unity
-    guid: 4760eca8fd5381b4980de8915cb2a27d
+    path: Assets/Scenes/Updated/Cave_DUPLICATE.unity
+    guid: 365a4a3f0b63e5a4da50c891ba85d59e
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: c74c7ddb12275984782a19408f332f5a, type: 2}

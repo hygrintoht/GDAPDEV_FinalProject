@@ -23,13 +23,17 @@ public class GameUIBehaviour : MonoBehaviour
     [Header("GameData")]
     [SerializeField] private float timer = 10.0f;
     [SerializeField] private float score_Multiplier = 1.0f;
+    [SerializeField] private WebAPI uploadLocation;
+    [SerializeField] private int levelCode;
+    //boss container
+    [SerializeField] private BossCustom container;
+    [SerializeField] private GameObject boss;
 
-    [SerializeField] GameObject boss;
 
     private float currentTime = 0;
     private bool hasDataUploaded = false;
     private bool bossActive = true;
-    
+
     //EnemyBehavior
 
     //For Health
@@ -87,7 +91,7 @@ public class GameUIBehaviour : MonoBehaviour
         healthBar = healthBarObj.GetComponent<Slider>();
         progBar = progBarObj.GetComponent<Slider>();
 
-        
+
     }
 
     //public function
@@ -108,11 +112,12 @@ public class GameUIBehaviour : MonoBehaviour
             {
                 if (progressRatio > 1.0f)
                 {
-                   
+
                 }
 
                 if ((timer + 5.0f) < currentTime)
                 {
+                    if (boss == null) { boss = container.Boss; }
                     boss.SetActive(true);
                     progBarObj.SetActive(false);
                     //play audio if needed
@@ -148,7 +153,7 @@ public class GameUIBehaviour : MonoBehaviour
 
     private void UpdateHealth(Parameters param)
     {
-        
+
         //For Health
         int playerHP = param.GetIntExtra("playerHealth", 0);
         int maxHP = param.GetIntExtra("maxHealth", 0);
@@ -170,7 +175,7 @@ public class GameUIBehaviour : MonoBehaviour
 
     public void ScoreUpdate()
     {
-       
+
         scoreSection.SetActive(true);
         Time.timeScale = 0;
 
@@ -185,8 +190,19 @@ public class GameUIBehaviour : MonoBehaviour
         {
             float earnings = scores * score_Multiplier;
             GameData.Instance.UpdateCurrency((int)earnings);
+            UploadData();
             hasDataUploaded = true;
+            Debug.LogWarning("Done Updating");
         }
-        
+
+    }
+
+    public void UploadData()
+    {
+        Debug.Log($"Level Code: {levelCode.ToString()}");
+        Debug.Log($"Player user name: {GameData.Instance.RetrieveName()}");
+        Debug.Log($"Player Score: {GameData.Instance.RetrieveScore()}");
+
+        uploadLocation.SendScore(levelCode, GameData.Instance.RetrieveName(), GameData.Instance.RetrieveScore());
     }
 }

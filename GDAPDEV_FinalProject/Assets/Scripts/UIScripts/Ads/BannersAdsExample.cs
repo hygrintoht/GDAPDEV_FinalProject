@@ -21,8 +21,7 @@ public class BannersAdsExample : MonoBehaviour
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOsAdUnitId
             : _androidAdUnitId;
-
-        
+        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
     }
 
     // Update is called once per frame
@@ -71,7 +70,7 @@ public class BannersAdsExample : MonoBehaviour
 
         };
 
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER); 
+        
         Advertisement.Banner.Show(_adUnitId, options);
         OnBannerLoad();
 
