@@ -44,6 +44,7 @@ public class ShipControls : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private ParticleSystem deathExplotion;
     [SerializeField] private GameObject shield;
+    [SerializeField] private Renderer shipBody;
     private Multiplier multiplierData;
 
     //Upgrade Parameters
@@ -119,9 +120,11 @@ public class ShipControls : MonoBehaviour
     {
             if (shieldTimer <= 0)//if sheild timer is not counting down
             {
+                
                 HP--;
-                //Debug.Log("Hit");
-            }
+                UpdateUI();
+            //Debug.Log("Hit");
+        }
             if (HP <= 0)//if hp is lower than 1
             {
                 ShipDeath();
@@ -174,6 +177,30 @@ public class ShipControls : MonoBehaviour
         if (numChange == 1) currBulletType = Turret.BulletType.green;
         if (numChange == 2) currBulletType = Turret.BulletType.blue;
         //not confusing at all (i mean i can use unisigned int and modulo but some times it is unreadable)
+
+        Vector3 colorParameters = Vector3.zero;
+        
+
+        //Physical  Color Change of the Ship
+        switch (numChange)
+        {
+            case 0:
+                colorParameters = new Vector3(1.0f, 0.7f, 0.7f);
+                shipBody.material.color = new Color(colorParameters.x, colorParameters.y, colorParameters.z, 1.0f);
+                break;
+            case 1:
+                colorParameters = new Vector3(0.7f, 1.0f, 0.7f);
+                shipBody.material.color = new Color(colorParameters.x, colorParameters.y, colorParameters.z, 1.0f);
+                break;
+            case 2:
+                colorParameters = new Vector3(0.7f, 0.7f, 1.0f);
+                shipBody.material.color = new Color(colorParameters.x, colorParameters.y, colorParameters.z, 1.0f);
+                break;
+
+            default:
+                Debug.LogError("Color out of range");
+                break;
+        }
     }
 
     public void DodgeRoll(bool direction)//0 left 1 right (dodge roll(no iframes because of shield))
@@ -243,7 +270,9 @@ public class ShipControls : MonoBehaviour
 
         Debug.Log($"Health: {currData[4]}");
 
-        //Needed to manage
+        shipBody.material.color = new Color(1.0f, 0.7f, 0.7f, 1.0f);
+
+        
         //Revive
 
     }

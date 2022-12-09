@@ -60,6 +60,35 @@ MonoBehaviour:
     m_Address: Sound Effects/Laser.ogg
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: e1858e08ebda141469ee032b92a075ff
+    m_Address: Particle/BlackTrail.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: b18c2d8e08b3f3444a2589181f80957b
+    m_Address: Particle/Explosion.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: a98bb95fdb46ba9479d1925a5cf8abb9
+    m_Address: Particle/Firecloud.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: 8b9aea8fbfe0af0448cedd083128f07d
+    m_Address: Particle/CloudBlack.png
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Texture
+  - m_GUID: 278c3af84857ccb44a84b272af6afbb1
+    m_Address: Bullet.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: e74faf655bdf7f34781ee2406bb77b05
+    m_Address: Particles/Explosion.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
   m_SchemaSet:

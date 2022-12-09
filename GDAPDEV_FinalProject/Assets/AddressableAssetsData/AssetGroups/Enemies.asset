@@ -45,6 +45,26 @@ MonoBehaviour:
     m_Address: SoundEffect/Explode.wav
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 06b4fb27e2f7cab49b3934e56eea94bf
+    m_Address: RandTurretHolder.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Prefab
+  - m_GUID: a58f66d4f338c4c4f9ca1055fc7e04e8
+    m_Address: Ship_Blue.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: 0cb54e7759dad9d43add7812c8967d4d
+    m_Address: Ship_Green.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
+  - m_GUID: 3bc678d12d9ae9d41ae00b6e994449e0
+    m_Address: Ship_Red.mat
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Material
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 0213ac0c9a5c2154b86e9ef633d6896a, type: 2}
   m_SchemaSet:
