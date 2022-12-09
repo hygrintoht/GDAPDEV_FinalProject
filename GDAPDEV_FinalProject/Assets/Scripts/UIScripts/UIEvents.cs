@@ -158,11 +158,13 @@ public class UIEvents : MonoBehaviour
     public void OnLevelSelect_2()
     {
         //Switch Scene from one to another
+        SceneManager.LoadScene(3);
     }
 
     public void OnLevelSelect_3()
     {
         //Switch Scene from one to another
+        SceneManager.LoadScene(4);
     }
 
     // === Upgrade Button Presses === //

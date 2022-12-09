@@ -19,17 +19,17 @@ public class SpawnerScript : MonoBehaviour
     Vector3 center;
     Vector3 size;
 
-    void Start()
+    private void Init()
     {
         pool = new ObjectPool<EnemyBehavior>(
-            () => { return Instantiate(enemyPrefab); },
-            enemy => { enemy.gameObject.SetActive(true); },
-            enemy => { enemy.gameObject.SetActive(false); },
-            enemy => { Destroy(enemy.gameObject); },
-            false,
-            15,
-            30
-            );
+                    () => { return Instantiate(enemyPrefab); },
+                    enemy => { enemy.gameObject.SetActive(true); },
+                    enemy => { enemy.gameObject.SetActive(false); },
+                    enemy => { Destroy(enemy.gameObject); },
+                    false,
+                    15,
+                    30
+                    );
 
         spawnTimer = Random.Range(minSpawnTime, maxSpawnTime);
         center = gameObject.transform.position;
@@ -38,6 +38,10 @@ public class SpawnerScript : MonoBehaviour
 
     void Update()
     {
+        if (pool == null)
+        {
+            Init();
+        }
         if (spawnerStatus) {
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0)

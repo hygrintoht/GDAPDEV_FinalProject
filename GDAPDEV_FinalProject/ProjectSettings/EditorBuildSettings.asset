@@ -14,4 +14,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ocean.unity
     guid: 73ecf06c89a714045bb9bdbcb924c596
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/Scenes/City.unity
+    guid: cbaa23caf3d1e2f4b92e7434bc1a44cc
+  - enabled: 1
+    path: Assets/Scenes/Cave.unity
+    guid: 4760eca8fd5381b4980de8915cb2a27d
+  m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: c74c7ddb12275984782a19408f332f5a, type: 2}
