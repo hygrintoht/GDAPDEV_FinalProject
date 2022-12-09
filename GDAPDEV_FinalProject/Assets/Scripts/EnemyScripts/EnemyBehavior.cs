@@ -20,7 +20,7 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField] public GameObject turret;
     [SerializeField] EnemyColor enemyColor = EnemyColor.red;
     [SerializeField] public float bulletDamage = 5.0f;
-    [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] public float moveSpeed = 5.0f;
     //[SerializeField] float timeAlive = 20.0f;
 
     [Header("Particle System with Sound")]

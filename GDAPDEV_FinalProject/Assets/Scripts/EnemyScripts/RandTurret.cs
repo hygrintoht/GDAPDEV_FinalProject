@@ -11,7 +11,7 @@ public class RandTurret : MonoBehaviour
     [SerializeField]float fireCountDown;
     Vector3 shootAreaCenter;
     Vector3 shootAreaSize;
-    Vector3 result;
+    //Vector3 result;
 
     void Start()
     {
@@ -25,9 +25,9 @@ public class RandTurret : MonoBehaviour
         fireCountDown -= Time.deltaTime;
         if(fireCountDown <= 0)
         {
-            result = RandomPositionInShootArea();
+            //result = RandomPositionInShootArea();
             //Debug.Log($"{result}");
-            transform.LookAt(result);
+            transform.LookAt(RandomPositionInShootArea());
             turret.Shoot(Turret.BulletType.none);
             fireCountDown = Random.Range(3.0f, 7.5f);
         }
