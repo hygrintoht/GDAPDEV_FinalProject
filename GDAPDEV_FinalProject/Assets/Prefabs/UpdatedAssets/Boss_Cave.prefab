@@ -60,13 +60,13 @@ MonoBehaviour:
   health: 30
   turret: {fileID: 173970810445659620}
   enemyColor: 0
-  bulletDamage: 2.5
+  bulletDamage: 1.5
   moveSpeed: 5
   deathParticles:
   - {fileID: 1357931141713128076}
   - {fileID: 1357931142487107653}
   - {fileID: 1357931141974246284}
-  bossHealth: 700
+  bossHealth: 900
   colorChangeTime: 5
   maxXDistanceFromCenter: 12.5
   maxYDistanceFromCenter: 7.5
