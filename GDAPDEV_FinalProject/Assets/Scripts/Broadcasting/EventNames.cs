@@ -14,11 +14,14 @@ public class EventNames {
 
 	public const string ON_FIRE = "ON_FIRE";
     public const string ON_HIT = "ON_HIT";
+    public static string LOAD_BOSS = "LOAD_BOSS";
 
     public const string ON_PICTURE_CLICKED = "ON_PICTURE_CLICKED";
 
-	//Classes will be used to differientiate from one type to another
-	public class GLevel1 {
+	
+
+    //Classes will be used to differientiate from one type to another
+    public class GLevel1 {
 		//Ex. Removed Later
 		public const string ON_START_BLUETOOTH_DEMO = "ON_START_BLUETOOTH_DEMO";
 		public const string ON_RECEIVED_MESSAGE = "ON_RECEIVED_MESSAGE";
