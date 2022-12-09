@@ -28,6 +28,7 @@ public class GameUIBehaviour : MonoBehaviour
 
     private float currentTime = 0;
     private bool hasDataUploaded = false;
+    private bool bossActive = true;
     
     //EnemyBehavior
 
@@ -101,36 +102,43 @@ public class GameUIBehaviour : MonoBehaviour
             progFillBar.color = bossColor;
             bossLabel.SetActive(true);
             SpawnerGroup.GetInstance().ChangeSpwanersActiveStatus(false);
-            if (progressRatio > 1.0f)
-            {
-                boss.SetActive(true);
-            }
 
-            if ((timer + 5.0f) < currentTime)
-            {
-                progBarObj.SetActive(false);
-                //play audio if needed
 
-                if (boss.GetComponent<BossBehavior>().health <= 0)
+            if (bossActive == true)
+            {
+                if (progressRatio > 1.0f)
                 {
-                    scoreSection.SetActive(true);
-                    Time.timeScale = 0;
+                   
+                }
 
+                if ((timer + 5.0f) < currentTime)
+                {
+                    boss.SetActive(true);
+                    progBarObj.SetActive(false);
+                    //play audio if needed
 
-
-                    if (!hasDataUploaded)
+                    if (boss.GetComponent<BossBehavior>().health <= 0)
                     {
-                        GameData.Instance.UpdateScore(2000);
-                        int scores = GameData.Instance.RetrieveScore();
+                        scoreSection.SetActive(true);
+                        Time.timeScale = 0;
 
-                        //Text Description
-                        scoreTxt.text = $"Total Score: {scores.ToString()} ";
-                        multiplierTxt.text = $"Score Multiplier: {score_Multiplier.ToString()} X";
-                        totalEarningTxt.text = $"Currency Earned: {scores * score_Multiplier} ";
 
-                        float earnings = scores * score_Multiplier;
-                        GameData.Instance.UpdateCurrency((int)earnings);
-                        hasDataUploaded = true;
+
+                        if (!hasDataUploaded)
+                        {
+                            GameData.Instance.UpdateScore(2000);
+                            int scores = GameData.Instance.RetrieveScore();
+
+                            //Text Description
+                            scoreTxt.text = $"Total Score: {scores.ToString()} ";
+                            multiplierTxt.text = $"Score Multiplier: {score_Multiplier.ToString()} X";
+                            totalEarningTxt.text = $"Currency Earned: {scores * score_Multiplier} ";
+
+                            float earnings = scores * score_Multiplier;
+                            GameData.Instance.UpdateCurrency((int)earnings);
+                            hasDataUploaded = true;
+                            bossActive = false;
+                        }
                     }
                 }
             }
