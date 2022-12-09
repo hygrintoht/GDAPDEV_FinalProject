@@ -103,7 +103,7 @@ public class ShipControls : MonoBehaviour
             if (shieldTimer <= 0)//if sheild timer is not counting down
             {
                 HP--;
-                Debug.Log("Hit");
+                //Debug.Log("Hit");
             }
             if (HP <= 0)//if hp is lower than 1
             {
