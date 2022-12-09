@@ -26,6 +26,8 @@ public class GameData: MonoBehaviour
     //Other useful Data
     private int score = 0;
     // private int highScore = 0;
+    private string user_name;
+    private string defaulName = "default";
     private int totalCurrency = 2000;
 
     //Cheat Data
@@ -187,6 +189,32 @@ public class GameData: MonoBehaviour
 
         //Cheat Data
         
+    }
+
+    public void ResetName()
+    {
+        PlayerPrefs.SetString("user_name", "");
+    }
+
+    public void UploadUserName(string name)
+    {
+        PlayerPrefs.SetString("user_name", name);
+    }
+
+    public string RetrieveName()
+    {
+        string storedName = PlayerPrefs.GetString("user_name");
+
+        if(storedName != "" && storedName != null)
+        {
+            return storedName;
+        }
+
+        else
+        {
+            return defaulName;
+        }
+
     }
 
     
