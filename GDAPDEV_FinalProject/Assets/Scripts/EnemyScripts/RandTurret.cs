@@ -8,14 +8,15 @@ public class RandTurret : MonoBehaviour
     [SerializeField] Turret turret;
     //[SerializeField] GameObject EnemyShootArea;
 
-    [SerializeField]float fireCountDown;
+    [SerializeField]private float fireCountDown;
+    [SerializeField] private float decreaseCooldown = 0;
     Vector3 shootAreaCenter;
     Vector3 shootAreaSize;
     //Vector3 result;
 
     void Start()
     {
-        fireCountDown = Random.Range(3.0f, 7.5f);
+        fireCountDown = Random.Range(3.0f - decreaseCooldown, 7.5f - (decreaseCooldown * 1.5f));
         shootAreaCenter = Vector3.zero;
         shootAreaSize = new Vector3(13.0f,7.0f,0);
     }
@@ -29,7 +30,7 @@ public class RandTurret : MonoBehaviour
             //Debug.Log($"{result}");
             transform.LookAt(RandomPositionInShootArea());
             turret.Shoot(Turret.BulletType.none);
-            fireCountDown = Random.Range(3.0f, 7.5f);
+            fireCountDown = Random.Range(3.0f - decreaseCooldown, 7.5f - (decreaseCooldown * 1.5f));
         }
     }
 
