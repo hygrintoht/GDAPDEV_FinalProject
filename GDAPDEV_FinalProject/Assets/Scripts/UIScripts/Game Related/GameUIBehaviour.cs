@@ -108,11 +108,12 @@ public class GameUIBehaviour : MonoBehaviour
             {
                 if (progressRatio > 1.0f)
                 {
-                    boss.SetActive(true);
+                   
                 }
 
                 if ((timer + 5.0f) < currentTime)
                 {
+                    boss.SetActive(true);
                     progBarObj.SetActive(false);
                     //play audio if needed
 

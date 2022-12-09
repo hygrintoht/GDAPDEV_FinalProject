@@ -31,7 +31,7 @@ public class BossBehavior : EnemyBehavior
     public override void Update()
     {
         colorChangeTimer -= Time.deltaTime;
-        Debug.Log(colorChangeTimer);
+        //Debug.Log(colorChangeTimer);
         if (colorChangeTimer <= 0)
         {
             SetEnemyParams();

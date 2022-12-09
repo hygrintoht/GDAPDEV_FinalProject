@@ -194,6 +194,10 @@ PrefabInstance:
       propertyPath: boss
       value: 
       objectReference: {fileID: 1087482460}
+    - target: {fileID: 4523536890901321958, guid: 0974ceb57dff0c846a40d4980010f4e3, type: 3}
+      propertyPath: timer
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 4523536890901321977, guid: 0974ceb57dff0c846a40d4980010f4e3, type: 3}
       propertyPath: m_Name
       value: GameManager
