@@ -32,7 +32,7 @@ public class GameUIEvents : MonoBehaviour
     //Public Calls
     public void onPressMainMenu()
     {
-        SceneManager.LoadScene(1); //Load to loadout scene
+        SceneManager.LoadScene("Assets/Scenes/PlayerHub.unity"); //Load to loadout scene
         Time.timeScale = 1.0f;
     }
 
