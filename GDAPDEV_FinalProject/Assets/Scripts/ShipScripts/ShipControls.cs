@@ -127,7 +127,7 @@ public class ShipControls : MonoBehaviour
                 ShipDeath();
                 //Call the UI
             }
-        }
+        
         else if(collision.gameObject.layer == 11) 
         {
             ShipDeath();
