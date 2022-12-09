@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3581517655536374996}
   - component: {fileID: 6237627555892096429}
   - component: {fileID: 2872503292821582109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Explosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4888,7 +4888,7 @@ GameObject:
   - component: {fileID: 5990064651004317352}
   - component: {fileID: 5990064651004317353}
   - component: {fileID: 4229565419323074479}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4981,6 +4981,10 @@ PrefabInstance:
       value: Base
       objectReference: {fileID: 0}
     - target: {fileID: 5784050967781612583, guid: 3d9ce70bd167b71469f5ab332d2c2f26, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5784050967781612583, guid: 3d9ce70bd167b71469f5ab332d2c2f26, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5063,6 +5067,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5990064651004317359}
     m_Modifications:
+    - target: {fileID: 1155167638420568219, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2081878137648856803, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5107,9 +5115,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008605174017323706, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_Name
       value: RandTurretHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}

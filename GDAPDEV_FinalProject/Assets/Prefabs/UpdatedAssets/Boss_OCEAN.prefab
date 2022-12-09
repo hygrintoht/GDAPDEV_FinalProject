@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8430594540334337676}
   - component: {fileID: 8430594540334337679}
   - component: {fileID: 8430594540334337678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Boss_OCEAN
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -107,7 +107,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8430594540887311723}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Death
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7360898557133104637, guid: e74faf655bdf7f34781ee2406bb77b05, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e74faf655bdf7f34781ee2406bb77b05, type: 3}
 --- !u!198 &1357931142487107653 stripped
@@ -254,6 +258,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion
       objectReference: {fileID: 0}
+    - target: {fileID: 7360898557133104637, guid: e74faf655bdf7f34781ee2406bb77b05, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e74faf655bdf7f34781ee2406bb77b05, type: 3}
 --- !u!198 &1357931141713128076 stripped
@@ -273,6 +281,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430594540334337677}
     m_Modifications:
+    - target: {fileID: 1155167638420568219, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2081878137648856803, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -317,9 +329,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008605174017323706, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_Name
       value: RandTurretHolder (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8704139565810216068, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: decreaseCooldown
@@ -339,6 +359,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430594540334337677}
     m_Modifications:
+    - target: {fileID: 1155167638420568219, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2081878137648856803, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -383,9 +407,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008605174017323706, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_Name
       value: RandTurretHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8704139565810216068, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: decreaseCooldown
@@ -458,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7360898557133104637, guid: e74faf655bdf7f34781ee2406bb77b05, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e74faf655bdf7f34781ee2406bb77b05, type: 3}
 --- !u!198 &1357931141974246284 stripped
@@ -529,6 +565,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 6.4
       objectReference: {fileID: 0}
+    - target: {fileID: 8681918390214548139, guid: 848d068fd78caf24eacc82ca673b8d89, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 848d068fd78caf24eacc82ca673b8d89, type: 3}
 --- !u!4 &560965863900364938 stripped
@@ -548,6 +588,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430594540334337677}
     m_Modifications:
+    - target: {fileID: 1155167638420568219, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2081878137648856803, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -592,9 +636,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008605174017323706, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_Name
       value: RandTurretHolder (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8704139565810216068, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: decreaseCooldown
@@ -614,6 +666,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8430594540334337677}
     m_Modifications:
+    - target: {fileID: 1155167638420568219, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2081878137648856803, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -658,9 +714,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6008605174017323706, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: m_Name
       value: RandTurretHolder (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544855263564240400, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8704139565810216068, guid: 06b4fb27e2f7cab49b3934e56eea94bf, type: 3}
       propertyPath: decreaseCooldown
