@@ -152,19 +152,19 @@ public class UIEvents : MonoBehaviour
     public void OnLevelSelect_1()
     {
         //Switch Scene from one to another
-        SceneManager.LoadScene("Assets/Scenes/Ocean.unity");
+        SceneManager.LoadScene("Assets/Scenes/Updated/Ocean_DUPLICATE.unity");
     }
 
     public void OnLevelSelect_2()
     {
         //Switch Scene from one to another
-        SceneManager.LoadScene("Assets/Scenes/City.unity");
+        SceneManager.LoadScene("Assets/Scenes/Updated/City_DUPLICATE.unity");
     }
 
     public void OnLevelSelect_3()
     {
         //Switch Scene from one to another
-        SceneManager.LoadScene("Assets/Scenes/Cave.unity");
+        SceneManager.LoadScene("Assets/Scenes/Updated/Cave_DUPLICATE.unity");
     }
 
     // === Upgrade Button Presses === //
