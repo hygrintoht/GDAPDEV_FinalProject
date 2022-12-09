@@ -66,8 +66,10 @@ MonoBehaviour:
   - {fileID: 1357931141713128076}
   - {fileID: 1357931142487107653}
   - {fileID: 1357931141974246284}
-  bossHealth: 150
+  bossHealth: 250
   colorChangeTime: 5
+  maxXDistanceFromCenter: 12.5
+  maxYDistanceFromCenter: 7.5
 --- !u!114 &8430594540334337679
 MonoBehaviour:
   m_ObjectHideFlags: 0
