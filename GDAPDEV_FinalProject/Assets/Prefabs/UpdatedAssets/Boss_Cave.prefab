@@ -60,7 +60,7 @@ MonoBehaviour:
   health: 30
   turret: {fileID: 173970810445659620}
   enemyColor: 0
-  bulletDamage: 5
+  bulletDamage: 2.5
   moveSpeed: 5
   deathParticles:
   - {fileID: 1357931141713128076}
