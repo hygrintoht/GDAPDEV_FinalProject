@@ -14,14 +14,19 @@ public class BannersAdsExample : MonoBehaviour
     [SerializeField] string _iOsAdUnitId = "Banner_iOS";
     string _adUnitId;
 
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
         _adUnitId = (Application.platform == RuntimePlatform.IPhonePlayer)
             ? _iOsAdUnitId
             : _androidAdUnitId;
         Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+       
     }
 
     // Update is called once per frame

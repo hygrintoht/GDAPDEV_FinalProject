@@ -7841,7 +7841,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 37.4
+  m_fontSize: 39.65
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -11336,7 +11336,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 41.85
+  m_fontSize: 44.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -20934,7 +20934,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40.55
+  m_fontSize: 42.9
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -24320,7 +24320,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 38.95
+  m_fontSize: 41.15
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25788,8 +25788,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf6263732d3e64145a7053bc31bee119, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _showBannerBtn: {fileID: 0}
-  _hideBannerBtn: {fileID: 0}
+  _showBannerBtn: {fileID: 4072165898792122505}
+  _hideBannerBtn: {fileID: 7917678169470092534}
   _androidAdUnitId: Banner_Android
   _iOsAdUnitId: Banner_iOS
 --- !u!1 &8946833360961430072
