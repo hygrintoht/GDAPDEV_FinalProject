@@ -114,8 +114,8 @@ Transform:
   m_GameObject: {fileID: 8358771953508566724}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5681564196946920500}
   - {fileID: 2714413889598916651}
@@ -136,8 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInput: {fileID: 8497169576844886375}
-  moveSpeed: 10
-  maxHP: 3
+  moveSpeed: 2
+  maxHP: 6
   HP: 0
   turrets:
   - {fileID: 8975651601966357177}
@@ -298,8 +298,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12, y: 6, z: 10}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 10.71463, y: 2.2794893, z: 7.515285}
+  m_Center: {x: -0.048894484, y: 0.4584831, z: 0.5315587}
 --- !u!114 &8867866825183274974
 MonoBehaviour:
   m_ObjectHideFlags: 0
